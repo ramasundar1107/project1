@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="mainservice.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Services Showcase Section Styles */
+.services-showcase-section {
+    background-color: #ebddeb; /* படத்தில் உள்ளவாறு வெளிர் ஊதா பின்னணி நிறம் */
+    width: 100%;
+    padding: 60px 30px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.section-main-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* 3 கார்டுகளையும் நேராக வரிசைப்படுத்தும் கிரிட் லேஅவுட் */
+.services-cards-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* கார்டுகளின் பொதுவான கட்டமைப்பு */
+.service-display-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.service-display-card:hover {
+    transform: translateY(-5px); /* மவுஸ் வைக்கும்போது கார்டு சற்று மேலே எழும்பும் */
+}
+
+/* கார்டு இமேஜ் பாக்ஸ் */
+.service-card-img {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.service-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* கார்டு டெக்ஸ்ட் பகுதிகள் */
+.service-card-body {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.service-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.service-card-text {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1; /* டெக்ஸ்ட் சிறியதாக இருந்தாலும் பட்டன்கள் நேராக இருக்கும் */
+}
+
+/* அடர் ஊதா நிற புக் நவ் பட்டன் */
+.service-action-btn {
+    background-color: #7b1fa2; /* படத்தில் உள்ளவாறு அடர் ஊதா/பரிடில் நிறம் */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.service-action-btn:hover {
+    background-color: #5c147a;
+}
+
+/* ==========================================================================
+   Responsive Architecture for Tablets and Phones
+   ========================================================================== */
+
+/* டேப்லெட் திரைகளுக்கு (2 கார்டுகளாக மாறும்) */
+@media screen and (max-width: 992px) {
+    .services-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் வரிசையாக மாறும்) */
+@media screen and (max-width: 650px) {
+    .services-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card-img {
+        height: 200px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+
+    <!-- மெயின் சர்வீஸ் செக்ஷன் -->
+    <section class="services-showcase-section">
+        <!-- மெயின் செக்ஷன் தலைப்பு -->
+        <h1 class="section-main-title">SERVICES</h1>
+
+        <div class="services-cards-grid">
+            
+            <!-- கார்டு 1: Bridal Makeup -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/bride new.jpg" alt="Bridal Makeup Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Bridal Makeup</h2>
+                    <p class="service-card-text">
+                        An Exceptional Bridal Makeup, Hairdressing, Outfit, And Jewellery Make You Look Dazzling On Life's Unforgettable Day At The Wedding
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Luxury Package" data-price="25000">BOOK NOW</button>
+                </div>
+            </article>
+
+            <!-- கார்டு 2: Party Makeup -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/party n.jpg" alt="Party Makeup Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Party Makeup</h2>
+                    <p class="service-card-text">
+                        Parties Play A Significant Role In Every Woman Life. Females Are Over The Moon And Run Down Plans To Get Ready Ideally.
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Party Classic" data-price="8000">BOOK NOW</button>
+                </div>
+            </article>
+
+            <!-- கார்டு 3: Saree Draping -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/saree drap.jpg" alt="Saree Draping Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Saree Draping</h2>
+                    <p class="service-card-text">
+                        The Oldest And Most Prevalent Traditional Wear For Any Indian Woman Is The Saree. Every Indian Woman Loves To Drape A Saree.
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Saree Elegant" data-price="3000">BOOK NOW</button>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="services-cards-grid">
+            
+            <!-- கார்டு 1: Bridal Makeup -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/hair brid.jpg" alt="Bridal Makeup Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Bridal Makeup</h2>
+                    <p class="service-card-text">
+                        An Exceptional Bridal Makeup, Hairdressing, Outfit, And Jewellery Make You Look Dazzling On Life's Unforgettable Day At The Wedding
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Luxury Package" data-price="25000">BOOK NOW</button>
+                </div>
+            </article>
+
+            <!-- கார்டு 2: Party Makeup -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/bridel2.jpeg" alt="Party Makeup Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Party Makeup</h2>
+                    <p class="service-card-text">
+                        Parties Play A Significant Role In Every Woman Life. Females Are Over The Moon And Run Down Plans To Get Ready Ideally.
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Party Classic" data-price="8000">BOOK NOW</button>
+                </div>
+            </article>
+
+            <!-- கார்டு 3: Saree Draping -->
+            <article class="service-display-card">
+                <div class="service-card-img">
+                    <img src="project img/party n2.jpg" alt="Saree Draping Showcase">
+                </div>
+                <div class="service-card-body">
+                    <h2 class="service-card-title">Saree Draping</h2>
+                    <p class="service-card-text">
+                        The Oldest And Most Prevalent Traditional Wear For Any Indian Woman Is The Saree. Every Indian Woman Loves To Drape A Saree.
+                    </p>
+                    <button type="button" class="service-action-btn" data-package="Saree Elegant" data-price="3000">BOOK NOW</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- இன்லைன் ஜாவாஸ்கிரிப்ட் - புக்கிங் பக்கத்திற்கு விபரங்களை அனுப்பும் கோடு -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const serviceActionBtns = document.querySelectorAll(".service-action-btn");
+
+            serviceActionBtns.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const selectedPackage = e.currentTarget.getAttribute("data-package");
+                    const structuralPrice = e.currentTarget.getAttribute("data-price");
+
+                    const urlSafePackage = encodeURIComponent(selectedPackage);
+                    const urlSafePrice = encodeURIComponent(structuralPrice);
+
+                    // நேராக உங்கள் புக்கிங் பக்கத்திற்கு (booking.html) விபரங்களை எடுத்துச் செல்கிறது
+                    window.location.href = `booking.html?package=${urlSafePackage}&price=${urlSafePrice}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

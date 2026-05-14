@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BookingMyna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset & Base Workspace Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ebddeb; /* படத்தில் உள்ளவாறு மென்மையான வெளிர் ஊதா பின்னணி நிறம் */
+    color: #000000;
+}
+
+
+
+/* Page Outer Layout Frame */
+.contact-page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-main-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Pink Information Dashboard Box Styles (மேல் பகுதி பாக்ஸ்)
+   ========================================================================== */
+.info-dashboard-box {
+    background-color: #e55ea3; /* படத்தில் உள்ளவாறு பிரகாசமான பிங்க் நிறம் */
+    border-radius: 12px;
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.dashboard-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-col h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* ஐகான் மற்றும் டெக்ஸ்ட் அலைன்மென்ட் */
+.icon-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.icon-text i {
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+/* சோசியல் மீடியா ஐகான்கள் */
+.dashboard-socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.dashboard-socials a {
+    color: #000000;
+    font-size: 23px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-socials a:hover {
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Reach Us Form & Map Section Styles (கீழ் பகுதி லேஅவுட்)
+   ========================================================================== */
+.form-section-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.reach-us-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.grid-column {
+    flex: 1;
+}
+
+/* படிவ வடிவமைப்பு (Bottom lines style as requested by image view) */
+.minimalist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row-double {
+    display: flex;
+    gap: 30px;
+}
+
+.input-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.input-field-group label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111111;
+}
+
+/* படத்தில் உள்ளவாறு சுற்றிலும் பார்டர் இல்லாமல் அடியில் மட்டும் கோடு போடும் ஸ்டைல் */
+.input-field-group input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #000000; /* தடிமனான கருப்பு நிற கீழ்க்கோடு */
+    padding: 8px 0;
+    font-size: 25px;
+    outline: none;
+    color: #000000;
+}
+
+/* நீல நிற சென்ட் பட்டன் */
+.form-submit-btn {
+    align-self: flex-start;
+    background-color: #6d76f7; /* படத்தில் உள்ளவாறு வெளிர் நீல-ஊதா நிறம் */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 35px;
+    font-size: 28px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.form-submit-btn:hover {
+    background-color: #515ad4;
+}
+
+/* வரைபடம் பெட்டி (Google Maps Container Frame) */
+.map-wrapper {
+    width: 100%;
+    height: 280px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   Responsive Multi-Screen Architecture (அனைத்து திரை அளவுகளுக்கும்)
+   ========================================================================== */
+
+/* டேப்லெட் மற்றும் நடுத்தர திரைகளுக்கு */
+@media screen and (max-width: 950px) {
+    .info-dashboard-box {
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px;
+    }
+    .reach-us-grid {
+        gap: 40px;
+    }
+}
+
+/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் செங்குத்து வரிசையாக மாறும்) */
+@media screen and (max-width: 768px) {
+    .reach-us-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .grid-column {
+        width: 100%;
+    }
+    .form-row-double {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .form-submit-btn {
+        width: 100%; /* மொபைலில் பட்டன் முழு அகலத்திற்கு மாறும் */
+    }
+    .map-wrapper {
+        height: 240px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- மெயின் நேவிகேஷன் பார் -->
+       <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+
+    <main class="contact-page-container">
+        
+        <!-- பக்கத்தின் முதன்மைத் தலைப்பு -->
+        <h1 class="page-main-heading">CONTACT</h1>
+
+        <!-- செக்ஷன் 1: விபரங்கள் அட்டை (Pink Information Dashboard Box) -->
+        <section class="info-dashboard-box">
+            <!-- Column 1: Address -->
+            <div class="dashboard-col">
+                <h2>Address</h2>
+                <p class="icon-text">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>8-2-686/DR/9, Banjara Hills,<br>Hyderabad, Telangana 500034</span>
+                </p>
+            </div>
+
+            <!-- Column 2: Contact & Socials -->
+            <div class="dashboard-col">
+                <h2>Contact</h2>
+                <p class="icon-text"><i class="fa-solid fa-phone"></i> <span>Phone: 076740 83778</span></p>
+                <p class="icon-text"><i class="fa-solid fa-envelope"></i> <span>Email: Bookingmyna@Gmail.Com</span></p>
+                
+                <!-- சமூக வலைத்தள ஐகான்கள் -->
+                <div class="dashboard-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 3: Business Hours -->
+            <div class="dashboard-col">
+                <h2>Business Hours</h2>
+                <p class="icon-text"><i class="fa-regular fa-clock"></i> <span>Mon - Fri &nbsp;&nbsp;&nbsp;&nbsp; 9:00 Am - 5:00 Pm</span></p>
+                <p class="icon-text"><i class="fa-regular fa-clock"></i> <span>Saturday &nbsp;&nbsp; 8:00 Am - 4:00 Pm</span></p>
+                <p class="icon-text"><i class="fa-regular fa-clock"></i> <span>Sunday &nbsp;&nbsp;&nbsp;&nbsp; Closed</span></p>
+            </div>
+        </section>
+
+        <!-- செக்ஷன் 2: ரீச் அஸ் கீழ் பகுதி (Reach Us Form & Map Grid) -->
+        <h2 class="form-section-title">Reach Us</h2>
+        
+        <section class="reach-us-grid">
+            <!-- இடது பக்கம்: மினிமலிஸ்டிக் படிவம் (Minimal Form Fields) -->
+            <div class="grid-column form-panel">
+                <form id="contact-reach-form" class="minimalist-form" action="#" method="POST">
+                    
+                    <div class="form-row-double">
+                        <div class="input-field-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="firstname">
+                        </div>
+                        <div class="input-field-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="lastname">
+                        </div>
+                    </div>
+
+                    <div class="input-field-group">
+                        <label for="contact-email">Email*</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+
+                    <div class="input-field-group">
+                        <label for="contact-message">Message</label>
+                        <input type="text" id="contact-message" name="message">
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Send</button>
+                </form>
+            </div>
+
+            <!-- வலது பக்கம்: வரைபடம் (Google Map Frame Container) -->
+            <div class="grid-column map-panel">
+                <div class="map-wrapper">
+                    <!-- உங்கள் உண்மையான லொகேஷன் மேப் தெரிய src-க்குள் கூகுள் மேப் லிங்க்கை மாற்றிக்கொள்ளலாம் -->
+                    <iframe src="google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

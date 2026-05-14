@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Your Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Styling Resets and Core Environment Configurations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #000000;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Top Back Link Strip Rules Layout */
+.top-nav-bar {
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Central Titles Header Blocks Typography formatting */
+.booking-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.booking-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000000;
+}
+
+.booking-header .subtitle {
+    font-size: 16px;
+    color: #444444;
+    font-weight: 400;
+}
+
+/* Horizontal Column Layout Setup using flexbox grid structures */
+.booking-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid-column {
+    flex: 1;
+}
+
+/* Headers Underline Dividers Layout lines styling */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #777777;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+.panel-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.timezone-text {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+/* Dynamic Panels Typography body formatting */
+.panel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.date-status {
+    font-size: 16px;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.status-alert {
+    font-size: 15px;
+    color: #444444;
+    margin-bottom: 25px;
+}
+
+/* Service Details summary panel rules */
+.right-panel .panel-body {
+    align-items: flex-start;
+    text-align: left;
+}
+
+#selected-package-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+#selected-package-price {
+    font-size: 15px;
+    color: #111111;
+    margin-bottom: 25px;
+}
+
+/* Action Control Pill Buttons Styling Layout definitions */
+.action-btn {
+    width: 100%;
+    max-width: 250px;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* Purple-Blue next button */
+.next-avail-btn {
+    background-color: #727cf5;
+    color: #ffffff;
+}
+
+.next-avail-btn:hover {
+    background-color: #5b65db;
+}
+
+/* Disabled soft lavender submission button states matches the picture */
+.request-book-btn {
+    background-color: #b4bcfc;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Responsive Display Grid Conversions Handling Smartphones
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .booking-grid {
+        flex-direction: column; /* Collapses side-by-side rows into clean vertical blocks */
+        gap: 40px;
+    }
+
+    .booking-header {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .booking-header h1 {
+        font-size: 22px;
+    }
+
+    .panel-body {
+        align-items: center;
+        text-align: center;
+    }
+
+    .right-panel .panel-body {
+        align-items: center;
+        text-align: center;
+    }
+
+    .action-btn {
+        max-width: 100%; /* Stretches control actions across full viewport limits on phones */
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+    <main class="booking-container">
+        <!-- Back Navigation Control Link -->
+        <div class="top-nav-bar">
+            <a href="services.html" class="back-link">
+                <i class="fa-solid fa-chevron-left"></i> Back
+            </a>
+        </div>
+
+        <!-- Section Headings Layout -->
+        <header class="booking-header">
+            <h1>Schedule Your Service</h1>
+            <p class="subtitle">Check Out Our Availability And Book The Date And Time That Works For You</p>
+        </header>
+
+        <!-- Two Column Grid View System -->
+        <section class="booking-grid">
+            
+            <!-- Left Side Column: Date & Time Management Area -->
+            <div class="grid-column left-panel">
+                <div class="panel-header">
+                    <h2>Select A Date And Time</h2>
+                    <span class="timezone-text">India Standard Time (IST)</span>
+                </div>
+                
+                <div class="panel-body availability-notice">
+                    <p class="date-status" id="current-date-view">Availability For Sunday 11 May</p>
+                    <p class="status-alert">No Availability</p>
+                    <button type="button" class="action-btn next-avail-btn" id="open-calendar-btn">Check Next Availability</button>
+                </div>
+            </div>
+
+            <!-- Right Side Column: Dynamic Packages Checkout Summary Card -->
+            <div class="grid-column right-panel">
+                <div class="panel-header">
+                    <h2>Service Details</h2>
+                </div>
+
+                <div class="panel-body summary-card">
+                    <!-- Dynamic fields populated automatically by JavaScript based on the clicked item -->
+                    <h3 id="selected-package-name">Bridal Makeup Luxury Package</h3>
+                    <p id="selected-package-price">Rs 25000 Negotiable</p>
+                    
+                    <button type="button" class="action-btn request-book-btn" disabled>Request To Book</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+     <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Connect JavaScript Query String Reader Engine -->
+    <script src="booking.js"></script>
+        <!-- Connect JavaScript Query String Reader Engine -->
+    <script src="booking.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. முந்தைய பக்கத்தில் இருந்து வரும் பேக்கேஜ் மற்றும் விலையைப் பெற்று திரையில் காட்டும் கோடு
+      const windowUrlParameters = new URLSearchParams(window.location.search);
+
+      const requestedPackageName = windowUrlParameters.get("package");
+      const requestedPackagePrice = windowUrlParameters.get("price");
+
+      const displayTitleTextElement = document.getElementById("selected-package-name");
+      const displayPriceTextElement = document.getElementById("selected-package-price");
+
+      if (requestedPackageName) {
+        displayTitleTextElement.textContent = `Bridal Makeup ${requestedPackageName}`;
+      } else {
+        displayTitleTextElement.textContent = "Bridal Makeup Luxury Package";
+      }
+
+      if (requestedPackagePrice) {
+        displayPriceTextElement.textContent = `Rs ${requestedPackagePrice} Negotiable`;
+      } else {
+        displayPriceTextElement.textContent = "Rs 25000 Negotiable";
+      }
+
+      // ==========================================================================
+      // 2. புதிய திருத்தம்: பட்டன் கிளிக் செய்யும்போது calendar.html பக்கத்தை திறக்கும் கோடு
+      // ==========================================================================
+      const openCalendarBtn = document.getElementById("open-calendar-btn");
+
+      if (openCalendarBtn) {
+        openCalendarBtn.addEventListener("click", () => {
+          // தற்போதைய பக்கத்தில் இருக்கும் பேக்கேஜ் விவரங்களை சேகரிக்கிறது
+          const currentPackage = requestedPackageName || "Luxury Package";
+          const currentPrice = requestedPackagePrice || "25000";
+
+          // URL முகவரிக்கு ஏற்றவாறு மாற்றி அமைக்கிறது
+          const encodedPackage = encodeURIComponent(currentPackage);
+          const encodedPrice = encodeURIComponent(currentPrice);
+
+          // நேராக உங்கள் புதிய இன்டராக்டிவ் கேலண்டர் பக்கத்திற்கு (calendar.html) கூட்டிச் செல்கிறது
+          window.location.href = `calendar.html?package=${encodedPackage}&price=${encodedPrice}`;
+        });
+      }
+    });
+    </script>
+
+</body>
+
+</body>
+</html>

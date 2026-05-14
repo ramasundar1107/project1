@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="cloudflare.com">
+    <link rel="stylesheet" href="login.css">
+    <style>
+        /* Layout Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* முக்கிய மாற்றம்: body-ல் இருக்கும் Display Flex நீக்கப்பட்டுள்ளது */
+body {
+    background-color: #ebddeb; /* மென்மையான வெளிர் ஊதா பின்னணி */
+    width: 100%;
+}
+
+/* ==========================================================================
+   Header Navbar Styles (Top Block)
+   ========================================================================== */
+.navbar {
+    background-color: #5c324e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    min-height: 70px;
+    width: 100%;
+}
+
+.navbar-logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    background-color: #d1cbc4;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 40px 8px 15px;
+    font-size: 15px;
+    width: 200px;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Main Content Area Workspace (Center Block)
+   ========================================================================== */
+.auth-main-workspace {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* ஹெடருக்கும் ஃபூட்டருக்கும் நடுவே தாராள இடைவெளி தருகிறது */
+    min-height: calc(100vh - 70px - 300px); /* ஸ்கிரீனின் நடுப்பகுதியைத் தக்கவைக்கும் */
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-box {
+    width: 100%;
+    text-align: center;
+}
+
+.auth-box.hidden {
+    display: none !important;
+}
+
+.auth-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.auth-toggle-text {
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.toggle-link-btn {
+    background: none;
+    border: none;
+    color: #4f46e5;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Input Fields Forms Styles */
+.minimalist-auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+}
+
+.input-row-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-row-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-row-group input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #555555;
+    padding: 10px 4px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+}
+
+.forgot-password-link {
+    align-self: flex-start;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-top: -5px;
+}
+
+.auth-submit-btn {
+    background-color: #6d76f7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Dividers and Icons */
+.social-divider-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 35px 0 20px 0;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1.5px;
+    background-color: #777777;
+}
+
+.divider-text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.social-login-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-btn {
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.google-icon { color: #4285f4; }
+.facebook-icon { color: #1877f2; }
+
+/* ==========================================================================
+   Footer Styles (Bottom Block)
+   ========================================================================== */
+.main-footer {
+    background-color: #55324c;
+    color: #ffffff;
+    padding: 50px 40px 20px 40px;
+    width: 100%;
+}
+
+.footer-links-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #704b66;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #dfd5dd;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-col p {
+    font-size: 14px;
+    color: #dfd5dd;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #dfd5dd;
+    text-align: left;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 850px) {
+    .navbar { padding: 10px 20px; }
+    .footer-links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .auth-main-workspace { padding: 40px 20px; }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-links-grid { grid-template-columns: 1fr; }
+    .nav-menu { display: none; } /* மொபைலில் மெனுவை மறைக்கும் */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         1. HEADER SECTION (நேவிகேஷன் பார்)
+         ========================================== -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="portfolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+        <div class="nav-controls">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button type="submit" class="search-btn">
+                    <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                </button>
+            </div>
+            <a href="login.html" class="profile-icon">
+                <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#cca43b"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         2. MAIN CONTENT SECTION (லாகின் & சைன்-அப்)
+         ========================================== -->
+    <main class="auth-main-workspace">
+        <div class="auth-container">
+            
+            <!-- Login Form Box -->
+            <div class="auth-box" id="login-box">
+                <h1 class="auth-title">Login</h1>
+                <p class="auth-toggle-text">New To This Site? <button type="button" class="toggle-link-btn" id="go-to-signup">Sign Up</button></p>
+
+                <form class="minimalist-auth-form">
+                    <div class="input-row-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="input-row-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <a href="#" class="forgot-password-link">forgot password?</a>
+                    <button type="submit" class="auth-submit-btn">Login</button>
+                </form>
+
+                <div class="social-divider-row">
+                    <span class="divider-line"></span>
+                    <span class="divider-text">or login with</span>
+                    <span class="divider-line"></span>
+                </div>
+                <div class="social-login-icons">
+                    <a href="#" class="social-btn google-icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social-btn facebook-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- Sign Up Form Box -->
+            <div class="auth-box hidden" id="signup-box">
+                <h1 class="auth-title">Sign Up</h1>
+                <p class="auth-toggle-text">Already have an account? <button type="button" class="toggle-link-btn" id="go-to-login">Login</button></p>
+
+                <form class="minimalist-auth-form">
+                    <div class="input-row-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="input-row-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="input-row-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit" class="auth-submit-btn">Sign Up</button>
+                </form>
+
+                <div class="social-divider-row">
+                    <span class="divider-line"></span>
+                    <span class="divider-text">or sign up with</span>
+                    <span class="divider-line"></span>
+                </div>
+                <div class="social-login-icons">
+                    <a href="#" class="social-btn google-icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="social-btn facebook-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ==========================================
+         3. FOOTER SECTION (அடிப் பகுதி)
+         ========================================== -->
+    <footer class="main-footer">
+        <div class="footer-links-grid">
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="mainservice.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Banjara Hills, Hyderabad, 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869-011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2008–2026 Makeover booking service. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    
+
+        <!-- இதைப் பக்கத்தின் கீழே </body> டேக்கிற்கு மேலே அப்படியே பேஸ்ட் செய்யவும் -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. ஃபார்ம் பாக்ஸ்களை மாற்றுவதற்கான கூறுகள் (Form Switcher Elements)
+            const loginBox = document.getElementById("login-box");
+            const signupBox = document.getElementById("signup-box");
+            const goToSignupBtn = document.getElementById("go-to-signup");
+            const goToLoginBtn = document.getElementById("go-to-login");
+
+            goToSignupBtn.addEventListener("click", () => {
+                loginBox.classList.add("hidden");
+                signupBox.classList.remove("hidden");
+            });
+
+            goToLoginBtn.addEventListener("click", () => {
+                signupBox.classList.add("hidden");
+                loginBox.classList.remove("hidden");
+            });
+
+            // ==========================================================================
+            // 2. புதிய திருத்தம்: SUCCESS MESSAGE NOTIFICATION LOGIC
+            // ==========================================================================
+            
+            // லாகின் ஃபார்ம் சமர்ப்பிக்கும் போது (On Login Submit)
+            const loginForm = loginBox.querySelector(".minimalist-auth-form");
+            loginForm.addEventListener("submit", (event) => {
+                event.preventDefault(); // பக்கம் ரீஃப்ரெஷ் (Refresh) ஆவதைத் தடுக்கிறது
+
+                const emailInput = document.getElementById("login-email").value;
+
+                // திரையில் கன்பர்மேஷன் மெசேஜ் பாக்ஸ் காட்டும்
+                alert("You are successfully logged in!");
+
+                // லாகின் முடிந்ததும் பயனர் தானாகவே ஹோம் பேஜிற்கு (index.html) அழைத்துச் செல்லப்படுவார்
+                window.location.href = "index.html";
+            });
+
+            // சைன்-அப் ஃபார்ம் சமர்ப்பிக்கும் போது (On Sign Up Submit)
+            const signupForm = signupBox.querySelector(".minimalist-auth-form");
+            signupForm.addEventListener("submit", (event) => {
+                event.preventDefault(); // பக்கம் ரீஃப்ரெஷ் ஆவதைத் தடுக்கிறது
+
+                // திரையில் கன்பர்மேஷன் மெசேஜ் பாக்ஸ் காட்டும்
+                alert("You are successfully signed up!");
+
+                // சைன்-அப் முடிந்ததும் பயனர் உள்நுழைவதற்காக லாகின் ஃபார்ம் தானாகத் திறக்கும்
+                signupBox.classList.add("hidden");
+                loginBox.classList.remove("hidden");
+                
+                // உள்ளிட்ட பழைய விவரங்களை ஃபார்மில் இருந்து நீக்குகிறது (Reset fields)
+                signupForm.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BookingMyna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+.about-page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.page-main-heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+
+.company-intro-card {
+    display: flex;
+    border: 13px solid #888888; 
+    background-color: #ffffff;
+}
+
+.intro-text-block {
+    flex: 1.4;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.intro-headline {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+.intro-highlight-desc {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.intro-detailed-paragraph {
+    font-size: 18px;
+    color: #444444;
+    margin-bottom: 25px;
+}
+
+.intro-detailed-paragraph p {
+    margin-bottom: 18px;
+}
+
+.company-motto-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: auto; 
+}
+
+.intro-image-block {
+    flex: 1;
+    overflow: hidden;
+    border-left: 2px solid #888888;
+}
+
+.intro-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.advisory-partners-section {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.section-sub-heading {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.partner-display-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.partner-profile-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.partner-avatar-frame {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 14px solid #5c2c54; 
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.partner-avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.partner-name {
+    font-size: 34px;
+    font-weight: 700;
+    color: #4338ca;
+    margin-bottom: 6px;
+}
+
+.partner-title {
+    font-size: 24px;
+    color: #555555;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.partner-desc-block {
+    flex: 1.6;
+    font-size: 22px;
+    color: #222222;
+    line-height: 1.6;
+    text-align: left;
+   
+}
+
+.partner-link {
+    color: #000000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 900px) {
+    .company-intro-card {
+        flex-direction: column-reverse; 
+    }
+    .intro-image-block {
+        border-left: none;
+        border-bottom: 2px solid #888888;
+        height: 300px;
+    }
+    .partner-display-row {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .about-page-container {
+        padding: 30px 15px;
+    }
+    .intro-text-block {
+        padding: 20px 15px;
+    }
+    .intro-headline {
+        font-size: 18px;
+    }
+    .partner-display-row {
+        flex-direction: column; 
+        text-align: center;
+        gap: 30px;
+    }
+    .partner-desc-block {
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+<div class="logo-container">
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+
+    <main class="about-page-container">
+        
+        <!-- பக்கத்தின் முதன்மைத் தலைப்பு -->
+        <h1 class="page-main-heading">ABOUT US</h1>
+
+        <!-- செக்ஷன் 1: கம்பெனி அறிமுக அட்டை (Company Info Card) -->
+        <section class="company-intro-card">
+            <!-- இடது பக்கம்: விபரங்கள் மற்றும் தாரக மந்திரம் -->
+            <div class="intro-text-block">
+                <h2 class="intro-headline">Quality Professionals For All Your Makeup And Hairstyling Needs</h2>
+                <p class="intro-highlight-desc">Get Reliable And Quality Service From Certified Professionals With Satisfaction Guaranteed!</p>
+                
+                <div class="intro-detailed-paragraph">
+                    <p>At BookingMyna All Our Professionals Are Qualified, Trained And Certified. Our Professionals Are On-Boarded Only On A Thorough Evaluation And Passed By A Quality Score Given By A Senior Advisory Panel Who Happen To Be The Best In The Industry.</p>
+                    <p>Not Only That, We Also Have Customer Protection Included, Where Customers Enjoy A Replacement Guarantee On All Replacement Requests Raised At Least 48 Hours Before The Booked Event Day. Guaranteed Reversal Of Any Advance Payments Done By Client In An Event Of No Show From Any Booked Professional From BookingMyna.</p>
+                </div>
+                
+                <p class="company-motto-text">Happy Customers And Professionals Are Our Motto.</p>
+            </div>
+
+            <!-- வலது பக்கம்: மேக்கப் செய்யும் அழகான படம் -->
+            <div class="intro-image-block">
+                <img src="project img/makeup new.jpg" alt="Professional Makeup Application">
+            </div>
+        </section>
+
+        <!-- செக்ஷன் 2: அட்வைசரி பார்ட்னர்ஸ் (Advisory Partners Section) -->
+        <section class="advisory-partners-section">
+            <h2 class="section-sub-heading">Our Advisory Partners</h2>
+            
+            <div class="partner-display-row">
+                <!-- இடது பக்கம்: பார்ட்னர் அவதார் மற்றும் பெயர் விபரம் -->
+                <div class="partner-profile-card">
+                    <div class="partner-avatar-frame">
+                        <img src="project img/girl for.jpg" alt="Sathyasree Sutari">
+                    </div>
+                    <h3 class="partner-name">Sathyasree Sutari</h3>
+                    <p class="partner-title">Course Director & Celebrity Makeup Artist</p>
+                </div>
+
+                <!-- வலது பக்கம்: பார்ட்னர் விவரிப்பு உரை -->
+                <div class="partner-desc-block">
+                    <p>All Our Professionals Have Passed A Quality Score Set By One Of The Top Rated Academies In The Country, First Foundation PRO. Professionals Are Also Mentioned On Quality Servicing Guidelines By <a href="#" class="partner-link">First Foundation PRO</a>.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

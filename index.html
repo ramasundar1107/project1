@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        /* Container Wrapper Layout */
+.categories-section {
+    width: 100%;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* 4x2 Grid Setup for Desktop Monitors */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #f7a5d9; /* The pink thin border line color from the picture */
+    gap: 2px; /* Emulates pixel perfect grid separating borders */
+    width: 100%;
+}
+
+/* Base Card Attributes */
+.category-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Forces perfectly square responsive blocks */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Light Teal Text Container Blocks Styling */
+.teal-bg {
+    background-color: #76cee6; /* The light blue/teal color from the photo */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Top Horizontal Accent Line */
+.card-indicator {
+    width: 40px;
+    height: 4px;
+    background-color: #000000;
+    margin-bottom: 25px;
+}
+
+/* Typography Text inside Category Cards */
+.category-title {
+    color: #111111;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+/* Light Grey Pill Actions Buttons */
+.category-book-btn {
+    background-color: #e3deda; /* Cream-grey tone matches image */
+    color: #000000;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.category-book-btn:hover {
+    background-color: #d1cbc6;
+    transform: scale(1.02);
+}
+
+/* Responsive Image Block Adjustments */
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ==========================================================================
+   Responsive Viewport Breakdown Configurations
+   ========================================================================== */
+
+/* Tablets viewports layout (Switches into a 2x4 Grid Pattern) */
+@media screen and (max-width: 992px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .category-title {
+        font-size: 22px;
+    }
+}
+
+/* Smartphones viewports layout (Flattens block layout cleanly to avoid distortion) */
+@media screen and (max-width: 576px) {
+    .categories-grid {
+        grid-template-columns: 1fr; /* 1 Column full view stack */
+        gap: 4px;
+    }
+    
+    .category-card {
+        aspect-ratio: auto;
+        min-height: 260px; /* Safe standard height limits on mobile viewports */
+    }
+}
+
+/*  */
+
+
+
+/*  */
+/* Section Background Wrapper Setup */
+.why-choose-us {
+    background-color: #e460be; /* The solid magenta pink background from your picture */
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+
+/* Two-Column Alignment Container */
+.wcu-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Left Image Column Dimensions */
+.wcu-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.wcu-img {
+    width:600px;
+    height:auto;
+    object-fit: contain;
+    display: block;
+    
+}
+
+/* Right Content Column Layout */
+.wcu-content-wrapper {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section Main Heading Block */
+.wcu-heading {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+/* Bullet Points Lists Customizations */
+.wcu-points-list {
+    list-style-type: disc;
+    /* padding-left: 20px; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between bullet items */
+}
+
+.wcu-points-list li {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Responsive Breakpoint Architecture Handling All Screen Widths
+   ========================================================================== */
+
+/* Tablet Viewports Adjustment */
+@media screen and (max-width: 992px) {
+    .wcu-heading {
+        font-size: 28px;
+    }
+    .wcu-points-list li {
+        font-size: 16px;
+    }
+    .wcu-container {
+        gap: 30px;
+    }
+}
+
+/* Mobile Devices Stacking Viewports Breakpoint */
+@media screen and (max-width: 768px) {
+    .why-choose-us {
+        padding: 45px 20px;
+    }
+    
+    .wcu-container {
+        flex-direction: column; /* Stacks the columns vertically on phones */
+        gap: 40px;
+    }
+
+    .wcu-image-wrapper {
+        width: 100%;
+        max-width: 320px; /* Limits the model profile scaling limits on smaller viewports */
+    }
+
+    .wcu-content-wrapper {
+        width: 100%;
+    }
+
+    .wcu-heading {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+}
+/*  */
+
+
+
+.featured-packages-section {
+    background-color: #dfd5dd; /* Soft lavender-grey tint background from picture */
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    gap: 20px;
+}
+
+/* Side Decorative Panels Formatting */
+.decor-side {
+    flex: 1;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decor-img {
+    width:300px;
+    height:650px;
+    object-fit: contain;
+}
+
+/* Center Content Target Panel Column */
+.packages-central-column {
+    flex: 2;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Separator gap between stacked cards */
+}
+
+/* Light Blue Dynamic Interactive Item Card */
+.home-package-card {
+    background-color: #72cee7; /* Light sky blue background color matching image */
+    border: 8px solid #ffffff; /* Thick crisp white card borders */
+    padding: 30px 40px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.h-pkg-title {
+    color: #000000;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.h-pkg-desc {
+    color: #111111;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Thin horizontal line matching reference card layout styling */
+.h-pkg-divider {
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin-bottom: 25px;
+}
+
+.h-pkg-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.h-pkg-duration, .h-pkg-price {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Request action navigation trigger elements */
+.h-request-btn {
+    background-color: #e3deda; /* Neutral grey button styling matches image */
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.h-request-btn:hover {
+    background-color: #d1cbc6;
+}
+
+/* ==========================================================================
+   Responsive Adaptation Breakdown
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    .h-pkg-title {
+        font-size: 22px;
+    }
+    
+    .home-package-card {
+        padding: 25px 25px;
+    }
+}
+
+/* Mobile Layout Viewport Optimizations */
+@media screen and (max-width: 768px) {
+    /* Hide decorative cosmetics elements to maximize space on tiny screens */
+    .decor-side {
+        display: none;
+    }
+
+    .packages-central-column {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .featured-packages-section {
+        padding: 40px 15px;
+    }
+}
+
+/*  */
+
+/* ==========================================================================
+   Google Reviews Section Styles
+   ========================================================================== */
+.reviews-section {
+    background-color: #ebddeb; /* படத்தில் உள்ளவாறு வெளிர் ஊதா பின்னணி நிறம் */
+    width: 100%;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 3 கார்டுகளையும் நேராக வரிசைப்படுத்தும் கிரிட் லேஅவுட் */
+.reviews-grid {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* கார்டுகளுக்கு இடைப்பட்ட கேப் */
+}
+
+/* பொதுவான கார்டு வடிவமைப்பு */
+.review-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    min-height: 250px;
+}
+
+/* முதலாவது கார்டுக்கான பிரத்யேக சென்டர் அலைன்மென்ட் */
+.rating-summary-card {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.rating-number {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.rating-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.3;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.brand-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* பயனர் ரிவியூ கார்டு வடிவமைப்பு */
+.user-review-card {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.user-info-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* வட்ட வடிவ அவதார் லோகோக்கள் */
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.purple-bg { background-color: #6366f1; } /* மனோஜ் - ஊதா நிறம் */
+.blue-bg { background-color: #3b82f6; }   /* ஷான்வி - நீல நிறம் */
+
+.user-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* நட்சத்திரங்களின் (Stars) ஸ்டைல் மற்றும் ஆரஞ்சு நிறம் */
+.stars-row {
+    display: flex;
+    gap: 4px;
+    color: #f97316; /* ஆரஞ்சு/அடர் மஞ்சள் நட்சத்திரங்கள் */
+    font-size: 16px;
+}
+
+.stars-row.align-left {
+    margin-bottom: 30px;
+}
+
+.review-text {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Responsive Handling for Mobile Displays
+   ========================================================================== */
+
+/* டேப்லெட் திரைகளுக்கு (2 கார்டுகளாக மாறும்) */
+@media screen and (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .reviews-section {
+        padding: 40px 20px;
+    }
+}
+
+/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் வரிசையாக மாறும்) */
+@media screen and (max-width: 650px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    .review-card {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+     <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+
+     <section class="hero-banner">
+    <!-- Left Column: Content Text and CTA Button -->
+    <div class="hero-content">
+        <h1 class="hero-title">Quality Bridal Makeup &<br>Hair Styling Services</h1>
+        <p class="hero-subtitle">Certified Professionals To Cater Your Bridal Makeup & Hairstyling Needs</p>
+        <a href="services.html" class="hero-btn">
+            Request Quote 
+            <svg xmlns="w3.org" viewBox="0 0 320 512" class="btn-arrow"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+        </a>
+    </div>
+
+    <!-- Right Column: Image Presentation -->
+    <div class="hero-image-container">
+        <!-- Replace "bridal-image.jpg" with your actual image path -->
+        <img src="project img/face2-removebg-preview.png" alt="Bridal Makeup Profile" class="hero-img">
+    </div>
+</section>
+
+<section class="categories-section">
+    <div class="categories-grid">
+        
+        <!-- Block 1: Bridal Makeup Text Card -->
+        <div class="category-card text-card teal-bg">
+            <div class="card-indicator"></div>
+            <h2 class="category-title">BRIDAL<br>MAKEUP</h2>
+            <button class="category-book-btn" data-category="bridal">BOOK NOW</button>
+        </div>
+
+        <!-- Block 2: Bridal Makeup Image Card -->
+        <div class="category-card image-card">
+            <img src="project img/bridel2.jpeg" alt="Bridal Makeup Profile">
+        </div>
+
+        <!-- Block 3: Party Makeup Text Card -->
+        <div class="category-card text-card teal-bg">
+            <div class="card-indicator"></div>
+            <h2 class="category-title">PARTY<br>MAKEUP</h2>
+            <button class="category-book-btn" data-category="party">BOOK NOW</button>
+        </div>
+
+        <!-- Block 4: Party Makeup Image Card -->
+        <div class="category-card image-card">
+            <img src="project img/party w2.jpg" alt="Party Makeup Profile">
+        </div>
+
+        <!-- Block 5: Hair Styling Image Card -->
+        <div class="category-card image-card">
+            <img src="project img/hairst.jpg" alt="Hair Styling Profile">
+        </div>
+
+        <!-- Block 6: Hair Styling Text Card -->
+        <div class="category-card text-card teal-bg">
+            <div class="card-indicator"></div>
+            <h2 class="category-title">HAIR<br>STYLING</h2>
+            <button class="category-book-btn" data-category="hair">BOOK NOW</button>
+        </div>
+
+        <!-- Block 7: Saree Draping Image Card -->
+        <div class="category-card image-card">
+            <img src="project img/saree drap.jpg" alt="Saree Draping Presentation">
+        </div>
+
+        <!-- Block 8: Saree Draping Text Card -->
+        <div class="category-card text-card teal-bg">
+            <div class="card-indicator"></div>
+            <h2 class="category-title">SAREE<br>DRAPING</h2>
+            <button class="category-book-btn" data-category="saree">BOOK NOW</button>
+        </div>
+
+    </div>
+</section>
+<section class="why-choose-us">
+    <div class="wcu-container">
+        
+        <!-- Left Side: Makeup Model Image Display -->
+        <div class="wcu-image-wrapper">
+            <!-- Replace "model-makeup.png" with your actual image path -->
+            <img src="project img/makeover-removebg-preview.png" alt="Professional Makeup Application" class="wcu-img">
+        </div>
+
+        <!-- Right Side: Features & Content Text Block -->
+        <div class="wcu-content-wrapper">
+            <h2 class="wcu-heading">Why Choose Us ?</h2>
+            
+            <ul class="wcu-points-list">
+                <li>Industry Standard Quality Products</li>
+                <li>Bridal Makeup And Hairstyling Services Provided By Friendly Certified Professionals With Advanced Techniques</li>
+                <li>Certified Bridal Makeup And Hairstyling Professionals At Affordable Budgets</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="featured-packages-section">
+    <!-- Left Decorative Image Element -->
+    <div class="decor-side decor-left">
+        <img src="project img/bueaty_pr2-removebg-preview.png" alt="Lipstick Texture Brush" class="decor-img">
+    </div>
+
+    <!-- Central Packages Column Grid Container -->
+    <div class="packages-central-column">
+        
+        <!-- Card 1: Luxury Package Details -->
+        <article class="home-package-card">
+            <h2 class="h-pkg-title">Bridal Makeup Luxury Package</h2>
+            <p class="h-pkg-desc">Indulge In Bridal Elegance: Experience Our Luxury Makeup Package!</p>
+            
+            <hr class="h-pkg-divider">
+            
+            <div class="h-pkg-details">
+                <span class="h-pkg-duration">8 Hr</span>
+                <span class="h-pkg-price">Rs 25000 Negotiable</span>
+            </div>
+            
+            <button class="h-request-btn" data-package="Luxury Package" data-price="25000">Request To Book</button>
+        </article>
+
+        <!-- Card 2: Premium Package Details -->
+        <article class="home-package-card">
+            <h2 class="h-pkg-title">Bridal Makeup Premium Package</h2>
+            <p class="h-pkg-desc">Unleash Your Bridal Beauty: Experience The Premium Makeup Package!</p>
+            
+            <hr class="h-pkg-divider">
+            
+            <div class="h-pkg-details">
+                <span class="h-pkg-duration">6 Hr</span>
+                <span class="h-pkg-price">Rs 18000 Negotiable</span>
+            </div>
+            
+            <button class="h-request-btn" data-package="Premium Package" data-price="18000">Request To Book</button>
+        </article>
+
+    </div>
+
+    <!-- Right Decorative Image Element -->
+    <div class="decor-side decor-right">
+        <img src="project img/bueaty_pr-removebg-preview.png" alt="Lip Gloss Wand" class="decor-img">
+    </div>
+</section>
+
+<section class="reviews-section">
+    <div class="reviews-grid">
+        
+        <!-- கார்டு 1: கூகுள் ஓவரால ரேட்டிங் கார்டு -->
+        <article class="review-card rating-summary-card">
+            <div class="rating-number">4.7</div>
+            <div class="stars-row">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <h2 class="rating-title">Google Overall Rating</h2>
+            <p class="brand-name">Booking Myna</p>
+        </article>
+
+        <!-- கார்டு 2: மனோஜ் பொண்டா அவர்களின் விமர்சனம் -->
+        <article class="review-card user-review-card">
+            <div class="user-info-row">
+                <div class="user-avatar purple-bg">M</div>
+                <span class="user-name">Manoj Ponda</span>
+            </div>
+            <div class="stars-row align-left">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">Very Quick Response With Good Artist</p>
+        </article>
+
+        <!-- கார்டு 3: ஷான்வி ஷரவ் அவர்களின் விமர்சனம் -->
+        <article class="review-card user-review-card">
+            <div class="user-info-row">
+                <div class="user-avatar blue-bg">S</div>
+                <span class="user-name">Shanvi Sharav</span>
+            </div>
+            <div class="stars-row align-left">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">Very Quick Response With Good Artist</p>
+        </article>
+
+    </div>
+</section>
+
+<footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+<i class="fas fa-star"></i>
+<script src="home.js"></script>
+
+</body>
+</html>

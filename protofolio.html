@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Work Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset & Environment Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+}
+
+
+
+/* Portfolio Container Layout */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.portfolio-main-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.portfolio-subtitle {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+/* 3-Column Image Grid System (Desktop View) */
+.portfolio-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* படங்களுக்கு இடையே உள்ள இடைவெளி */
+}
+
+/* தனித்தனி படங்களின் பெட்டி வடிவமைப்பு */
+.gallery-item {
+    position: relative;
+    aspect-ratio: 2 / 3; /* படத்தில் உள்ளவாறு போர்ட்ரெய்ட் நீள வடிவம் */
+    background-color: #eaeaea;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* மவுஸ் வைக்கும்போது படம் லேசாக ஜூம் ஆகும் அனிமேஷன் */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Lightbox Pop-up Modal Window Styles (பெரிய படம் காட்டும் பகுதி)
+   ========================================================================== */
+.lightbox-modal {
+    display: none; /* ஆரம்பத்தில் மறைக்கப்பட்டிருக்கும் */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* கருப்பு பின்னணி */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* பாப்-அப் பெரிய இமேஜ் சைஸ் (அனைத்து திரைகளுக்கும்) */
+.lightbox-content-img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 3px solid #ffffff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    animation: zoomAnimation 0.25s ease-out;
+}
+
+@keyframes zoomAnimation {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* க்ளோஸ் (X) பட்டன் */
+.close-lightbox {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-lightbox:hover {
+    color: #cca43b;
+}
+
+/* படத்தின் கீழே வரும் கேப்ஷன் டெக்ஸ்ட் */
+.lightbox-caption {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Responsive Architecture for All Screen Widths
+   ========================================================================== */
+
+/* டேப்லெட் திரைகளுக்கு (2 காலம்களாக மாறும்) */
+@media screen and (max-width: 850px) {
+    .portfolio-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .navbar {
+        padding: 10px 20px;
+    }
+}
+
+/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் வரிசையாக மாறும்) */
+@media screen and (max-width: 500px) {
+    .portfolio-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .portfolio-main-title {
+        font-size: 24px;
+    }
+    .close-lightbox {
+        top: 15px;
+        right: 20px;
+        font-size: 35px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- நேவிகேஷன் பார் (உங்களது மெயின் ஹெடர் லேஅவுட்) -->
+   <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+
+    <main class="portfolio-container">
+        <!-- பக்கத்தின் முதன்மைத் தலைப்பு -->
+        <h1 class="portfolio-main-title">Our Work Portfolio</h1>
+        <p class="portfolio-subtitle">Click on any image to view it in full screen and higher clarity.</p>
+
+        <!-- இமேஜ் கேலரி கிரிட் (15 படங்கள்) -->
+        <section class="portfolio-gallery-grid">
+            <!-- Row 1 -->
+            <div class="gallery-item"><img src="project img/bridel2.jpeg" alt="Bridal Look 1"></div>
+            <div class="gallery-item"><img src="project img/bridel3.jpeg" alt="Bridal Look 2"></div>
+            <div class="gallery-item"><img src="project img/face1-removebg-preview.png" alt="Bridal Glamour"></div>
+            
+            <!-- Row 2 -->
+            <div class="gallery-item"><img src="project img/bridel5.jpg" alt="Traditional Wedding Makeover"></div>
+            <div class="gallery-item"><img src="project img/bridel6.jpg" alt="Lehenga Saree Style"></div>
+            <div class="gallery-item"><img src="project img/party w2.jpg" alt="Modern Reception Look"></div>
+            
+            <!-- Row 3 -->
+            <div class="gallery-item"><img src="project img/hairst2-removebg-preview.png" alt="Bridal Hairstyling Flowers"></div>
+            <div class="gallery-item"><img src="project img/hairst.jpg" alt="Party Hair Curls waves"></div>
+            <div class="gallery-item"><img src="project img/hair brid.jpg" alt="Traditional Saree Braid"></div>
+            
+            <!-- Row 4 -->
+            <div class="gallery-item"><img src="project img/party w.jpg" alt="Evening Party Makeup"></div>
+            <div class="gallery-item"><img src="project img/party ma1.jpg" alt="Glamorous Night Makeup"></div>
+            <div class="gallery-item"><img src="project img/party saree.jpg" alt="Soft Natural Makeup"></div>
+            
+            <!-- Row 5 -->
+            <div class="gallery-item"><img src="project img/chudi.jpg" alt="Saree Draping Guest Look"></div>
+            <div class="gallery-item"><img src="project img/chudi2.jpg" alt="Festive Saree Style"></div>
+            <div class="gallery-item"><img src="project img/bride new.jpg" alt="South Indian Bridal Outfit"></div>
+        </section>
+    </main>
+
+    <!-- பெரியதாகக் காட்டும் பாப்-அப் விண்டோ (Lightbox Modal Overlay) -->
+    <div class="lightbox-modal" id="imageLightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img class="lightbox-content-img" id="lightboxTargetImg" src="" alt="Expanded View">
+        <div class="lightbox-caption" id="lightboxCaptionText"></div>
+    </div>
+
+     <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightboxModal = document.getElementById("imageLightbox");
+    const lightboxImg = document.getElementById("lightboxTargetImg");
+    const lightboxCaption = document.getElementById("lightboxCaptionText");
+    const closeBtn = document.getElementById("closeLightbox");
+
+    // கிரிட்டில் உள்ள ஏதேனும் ஒரு இமேஜ் பெட்டியை கிளிக் செய்யும்போது...
+    galleryItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const clickedImg = item.querySelector("img");
+            
+            if (clickedImg) {
+                // 1. சிறிய படத்தின் லிங்க் மற்றும் மாற்றுப் பெயரை எடுத்து பாப்-அப்பிற்கு கொடுக்கிறது
+                lightboxImg.src = clickedImg.src;
+                lightboxCaption.textContent = clickedImg.alt;
+                
+                // 2. பாப்-அப் விண்டோவைத் திரையில் காண்பிக்கிறது
+                lightboxModal.style.display = "flex";
+                document.body.style.overflow = "hidden"; // பின்புறம் ஸ்க்ரோல் ஆவதைத் தடுக்கிறது
+            }
+        });
+    });
+
+    // க்ளோஸ் பட்டனை (X) கிளிக் செய்யும்போது பாப்-அப் மூடும்
+    closeBtn.addEventListener("click", closeLightboxWindow);
+
+    // படத்தின் வெளிப்புறம் உள்ள கருப்புப் பகுதியை கிளிக் செய்தாலும் பாப்-அப் மூடும்
+    lightboxModal.addEventListener("click", (e) => {
+        if (e.target === lightboxModal) {
+            closeLightboxWindow();
+        }
+    });
+
+    // பாப்-அப்பை மூடும் பொதுவான ஃபங்க்ஷன்
+    function closeLightboxWindow() {
+        lightboxModal.style.display = "none";
+        document.body.style.overflow = "auto"; // ஸ்க்ரோலிங்கை மீண்டும் அனுமதிக்கிறது
+    }
+});
+
+    </script>
+</body>
+</html>

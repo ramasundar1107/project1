@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="client-details.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #000000;
+}
+
+.details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Back Link Setup */
+.top-nav-bar {
+    margin-bottom: 15px;
+}
+
+.back-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Layout Grid System */
+.details-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.grid-column {
+    flex: 1;
+}
+
+.left-panel {
+    flex: 1.4;
+}
+
+/* Titles & Dividers */
+.main-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin-bottom: 20px;
+}
+
+/* Login Prompt Box */
+.login-alert {
+    background-color: #e3deda;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.login-alert a {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form-instruction {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #111111;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14.5px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Phone Input Custom Layout */
+.phone-input-wrapper {
+    display: flex;
+    gap: 0;
+}
+
+.phone-input-wrapper select {
+    padding: 10px;
+    font-size: 14.5px;
+    border: 1px solid #777777;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.phone-input-wrapper input {
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* Error Validations Styling */
+.form-group.invalid input {
+    border-color: #dc2626 !important;
+    background-color: #fff5f5;
+}
+
+.error-text {
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 500;
+    display: none;
+    margin-top: 2px;
+}
+
+.form-group.invalid .error-text {
+    display: block;
+}
+
+/* Right Side: Summary Card */
+.right-panel {
+    max-width: 320px;
+}
+
+.summary-card {
+    position: sticky;
+    top: 20px;
+    width: 100%;
+}
+
+.summary-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.summary-section {
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+.summary-section h3 {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.bold-text {
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.card-divider {
+    border: none;
+    border-top: 1px solid #dddddd;
+    margin: 15px 0;
+}
+
+.payment-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.sms-notice {
+    font-size: 13px;
+    color: #444444;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Submit Book Now Button */
+.book-now-btn {
+    width: 100%;
+    background-color: #7c86f9;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.book-now-btn:hover {
+    background-color: #5d68e2;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 850px) {
+    .details-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .right-panel {
+        max-width: 100%;
+    }
+    
+    .summary-card {
+        border-top: 1px solid #cccccc;
+        padding-top: 30px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Logo Section -->
+<div class="logo-container">
+    <!-- Replace "logo.png" with the path to your actual image file -->
+    <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
+</div>
+
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="mainservice.html" class="nav-item">Services</a>
+            <a href="protofolio.html" class="nav-item">Portfolio</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- Right Side Controls (Search & Profile) -->
+       <div class="nav-controls">
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <button type="submit" class="search-btn">
+            <!-- Inline SVG Search Glass -->
+            <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+    </div>
+    <a href="login.html" class="profile-icon">
+        <!-- Inline SVG User Profile -->
+        <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+    </a>
+</div>
+
+    </header>
+    <main class="details-container">
+        <!-- Back பட்டன் -->
+        <div class="top-nav-bar">
+            <a href="calendar.html" id="back-to-calendar" class="back-link">
+                <i class="fa-solid fa-chevron-left"></i> Back
+            </a>
+        </div>
+
+        <section class="details-grid">
+            
+            <!-- இடது பக்கம்: வாடிக்கையாளர் விவரங்கள் படிவம் (Form) -->
+            <div class="grid-column left-panel">
+                <h1 class="main-title">Client Details</h1>
+                <hr class="section-divider">
+
+                <div class="login-alert">
+                    <p>Already Have An Account? <a href="#">Log In</a> For Faster Booking.</p>
+                </div>
+
+                <form id="client-info-form" class="client-form" novalidate>
+                    <p class="form-instruction">Tell Us A Bit About Yourself</p>
+
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="client-name">Name *</label>
+                        <input type="text" id="client-name" name="name">
+                        <span class="error-text" id="name-error">Name is required</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="client-email">Email *</label>
+                        <input type="email" id="client-email" name="email">
+                        <span class="error-text" id="email-error">Please enter a valid email</span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="client-phone">Phone number</label>
+                        <div class="phone-input-wrapper">
+                            <select id="country-code">
+                                <option value="+91">+91</option>
+                            </select>
+                            <input type="tel" id="client-phone" name="phone">
+                        </div>
+                        <span class="error-text" id="phone-error">Please enter a valid 10-digit phone number</span>
+                    </div>
+
+                    <!-- Street -->
+                    <div class="form-group">
+                        <label for="client-street">Street *</label>
+                        <input type="text" id="client-street" name="street">
+                        <span class="error-text" id="street-error">Street address is required</span>
+                    </div>
+
+                    <!-- Apt / Floor No -->
+                    <div class="form-group">
+                        <label for="client-apt">Apt / Floor No</label>
+                        <input type="text" id="client-apt" name="apt">
+                    </div>
+
+                    <!-- City -->
+                    <div class="form-group">
+                        <label for="client-city">City *</label>
+                        <input type="text" id="client-city" name="city">
+                        <span class="error-text" id="city-error">City is required</span>
+                    </div>
+
+                    <!-- State -->
+                    <div class="form-group">
+                        <label for="client-state">State</label>
+                        <input type="text" id="client-state" name="state">
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="client-message">Add Your Message</label>
+                        <textarea id="client-message" name="message" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- வலது பக்கம்: புக்கிங் சம்மரி கார்டு -->
+            <div class="grid-column right-panel">
+                <div class="summary-card">
+                    <h2 class="summary-title">Booking Details</h2>
+                    
+                    <div class="summary-section">
+                        <h3 id="summary-package-name">Bridal Makeup Luxury Package</h3>
+                        <p id="summary-package-price">Rs 25000 Negotiable</p>
+                    </div>
+
+                    <div class="summary-section datetime-section">
+                        <p class="bold-text" id="summary-datetime">12 May 2026 At 2:30 Am</p>
+                        <p>Client's Place</p>
+                        <p>Admin</p>
+                        <p>8 Hr</p>
+                    </div>
+
+                    <hr class="card-divider">
+
+                    <div class="summary-section">
+                        <h4 class="payment-title">Payment Details</h4>
+                        <p id="summary-total-price">Rs 25000 Negotiable</p>
+                    </div>
+
+                    <hr class="card-divider">
+
+                    <p class="sms-notice">By Completing Your Booking, You Agree To Receive Related SMS Notifications.</p>
+                    
+                    <!-- மெயின் புக் நவ் பட்டன் (Form-ஐ சப்மிட் செய்யும்) -->
+                    <button type="submit" form="client-info-form" class="action-btn book-now-btn">Book Now</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links-grid">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Industries</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation and Refund</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Column 4 -->
+            <div class="footer-col contact-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</p>
+                <p><i class="fa-solid fa-phone"></i> +91-869 -011-0011</p>
+                <p><i class="fa-solid fa-envelope"></i> bookingmyna@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2008&ndash;2026 Makeover booking service. All Rights Reserved</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="client-details.js"></script>
+</body>
+</html>
