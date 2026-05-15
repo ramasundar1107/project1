@@ -57,9 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================================================================
-  // 2. NEW: Book Now Redirection Routing Function
-  // ==========================================================================
+  
   const bookButtons = document.querySelectorAll(".book-btn");
 
   bookButtons.forEach((btn) => {

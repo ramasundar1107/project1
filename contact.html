@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - BookingMyna</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Reset & Base Workspace Setup */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
-    background-color: #ebddeb; /* படத்தில் உள்ளவாறு மென்மையான வெளிர் ஊதா பின்னணி நிறம் */
+    background-color: #ebddeb; 
     color: #000000;
 }
 
@@ -40,11 +39,9 @@ body {
     text-transform: uppercase;
 }
 
-/* ==========================================================================
-   Pink Information Dashboard Box Styles (மேல் பகுதி பாக்ஸ்)
-   ========================================================================== */
+
 .info-dashboard-box {
-    background-color: #e55ea3; /* படத்தில் உள்ளவாறு பிரகாசமான பிங்க் நிறம் */
+    background-color: #e55ea3; 
     border-radius: 12px;
     padding: 40px 30px;
     display: flex;
@@ -67,7 +64,6 @@ body {
     color: #000000;
 }
 
-/* ஐகான் மற்றும் டெக்ஸ்ட் அலைன்மென்ட் */
 .icon-text {
     display: flex;
     align-items: flex-start;
@@ -84,7 +80,6 @@ body {
     margin-top: 3px;
 }
 
-/* சோசியல் மீடியா ஐகான்கள் */
 .dashboard-socials {
     display: flex;
     gap: 20px;
@@ -102,9 +97,7 @@ body {
     transform: scale(1.2);
 }
 
-/* ==========================================================================
-   Reach Us Form & Map Section Styles (கீழ் பகுதி லேஅவுட்)
-   ========================================================================== */
+
 .form-section-title {
     text-align: center;
     font-size: 30px;
@@ -123,7 +116,6 @@ body {
     flex: 1;
 }
 
-/* படிவ வடிவமைப்பு (Bottom lines style as requested by image view) */
 .minimalist-form {
     display: flex;
     flex-direction: column;
@@ -148,21 +140,19 @@ body {
     color: #111111;
 }
 
-/* படத்தில் உள்ளவாறு சுற்றிலும் பார்டர் இல்லாமல் அடியில் மட்டும் கோடு போடும் ஸ்டைல் */
 .input-field-group input {
     background: none;
     border: none;
-    border-bottom: 2px solid #000000; /* தடிமனான கருப்பு நிற கீழ்க்கோடு */
+    border-bottom: 2px solid #000000; 
     padding: 8px 0;
     font-size: 25px;
     outline: none;
     color: #000000;
 }
 
-/* நீல நிற சென்ட் பட்டன் */
 .form-submit-btn {
     align-self: flex-start;
-    background-color: #6d76f7; /* படத்தில் உள்ளவாறு வெளிர் நீல-ஊதா நிறம் */
+    background-color: #6d76f7;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -178,7 +168,6 @@ body {
     background-color: #515ad4;
 }
 
-/* வரைபடம் பெட்டி (Google Maps Container Frame) */
 .map-wrapper {
     width: 100%;
     height: 280px;
@@ -193,11 +182,7 @@ body {
     border: none;
 }
 
-/* ==========================================================================
-   Responsive Multi-Screen Architecture (அனைத்து திரை அளவுகளுக்கும்)
-   ========================================================================== */
 
-/* டேப்லெட் மற்றும் நடுத்தர திரைகளுக்கு */
 @media screen and (max-width: 950px) {
     .info-dashboard-box {
         flex-direction: column;
@@ -209,7 +194,6 @@ body {
     }
 }
 
-/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் செங்குத்து வரிசையாக மாறும்) */
 @media screen and (max-width: 768px) {
     .reach-us-grid {
         flex-direction: column;
@@ -223,7 +207,7 @@ body {
         gap: 25px;
     }
     .form-submit-btn {
-        width: 100%; /* மொபைலில் பட்டன் முழு அகலத்திற்கு மாறும் */
+        width: 100%; 
     }
     .map-wrapper {
         height: 240px;
@@ -234,11 +218,9 @@ body {
 </head>
 <body>
 
-    <!-- மெயின் நேவிகேஷன் பார் -->
        <header class="navbar">
         <!-- Logo Section -->
 <div class="logo-container">
-    <!-- Replace "logo.png" with the path to your actual image file -->
     <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
 </div>
 
@@ -252,7 +234,6 @@ body {
             <a href="contact.html" class="nav-item">Contact</a>
         </nav>
 
-        <!-- Right Side Controls (Search & Profile) -->
        <div class="nav-controls">
     <div class="search-bar">
         <input type="text" placeholder="Search">
@@ -271,10 +252,8 @@ body {
 
     <main class="contact-page-container">
         
-        <!-- பக்கத்தின் முதன்மைத் தலைப்பு -->
         <h1 class="page-main-heading">CONTACT</h1>
 
-        <!-- செக்ஷன் 1: விபரங்கள் அட்டை (Pink Information Dashboard Box) -->
         <section class="info-dashboard-box">
             <!-- Column 1: Address -->
             <div class="dashboard-col">
@@ -309,11 +288,9 @@ body {
             </div>
         </section>
 
-        <!-- செக்ஷன் 2: ரீச் அஸ் கீழ் பகுதி (Reach Us Form & Map Grid) -->
         <h2 class="form-section-title">Reach Us</h2>
         
         <section class="reach-us-grid">
-            <!-- இடது பக்கம்: மினிமலிஸ்டிக் படிவம் (Minimal Form Fields) -->
             <div class="grid-column form-panel">
                 <form id="contact-reach-form" class="minimalist-form" action="#" method="POST">
                     
@@ -342,10 +319,8 @@ body {
                 </form>
             </div>
 
-            <!-- வலது பக்கம்: வரைபடம் (Google Map Frame Container) -->
             <div class="grid-column map-panel">
                 <div class="map-wrapper">
-                    <!-- உங்கள் உண்மையான லொகேஷன் மேப் தெரிய src-க்குள் கூகுள் மேப் லிங்க்கை மாற்றிக்கொள்ளலாம் -->
                     <iframe src="google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>

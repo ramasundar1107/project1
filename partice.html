@@ -20,9 +20,8 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Navbar Base Styles (Desktop Layout) */
 .navbar {
-    background-color: #583150; /* Dark plum background from the image */
+    background-color: #583150; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,21 +40,21 @@ body {
 
 /* Logo Image Rules */
 .navbar-logo {
-    height: 100px;          /* Restricts height to fit cleanly inside the bar */
-    width: auto;           /* Maintains original aspect ratio without distortion */
-    object-fit: contain;   /* Ensures image stays sharp inside bounding limits */
+    height: 100px;        
+    width: auto;          
+    object-fit: contain;   
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
 
 .navbar-logo:hover {
-    opacity: 0.85;         /* Subtle feedback animation on hover */
+    opacity: 0.85;       
 }
 
 /* Small Screen Mobile Adjustment */
 @media screen and (max-width: 900px) {
     .navbar-logo {
-        height: 48px;      /* Slightly scales down the logo on smaller viewports */
+        height: 48px;      
     }
 }
 
@@ -92,7 +91,7 @@ body {
 }
 
 .search-bar input {
-    background-color: #d1cbc4; /* Soft grey background */
+    background-color: #d1cbc4; 
     border: none;
     border-radius: 20px;
     padding: 8px 40px 8px 15px;
@@ -127,9 +126,7 @@ body {
     color: #cca43b;
 }
 
-/* ==========================================================================
-   Responsive Design Breakpoint (Tablets and Mobile Screens)
-   ========================================================================== */
+
 @media screen and (max-width: 900px) {
     .navbar {
         flex-direction: column;
@@ -166,7 +163,6 @@ body {
     background-color: #ffffff;
 }
 
-/* 4x2 Grid Setup for Desktop Monitors */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -179,7 +175,7 @@ body {
 .category-card {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Forces perfectly square responsive blocks */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -187,9 +183,8 @@ body {
     align-items: center;
 }
 
-/* Light Teal Text Container Blocks Styling */
 .teal-bg {
-    background-color: #76cee6; /* The light blue/teal color from the photo */
+    background-color: #76cee6; 
     padding: 20px;
     text-align: center;
 }
@@ -214,7 +209,7 @@ body {
 
 /* Light Grey Pill Actions Buttons */
 .category-book-btn {
-    background-color: #e3deda; /* Cream-grey tone matches image */
+    background-color: #e3deda; 
     color: #000000;
     border: none;
     font-size: 14px;
@@ -239,11 +234,8 @@ body {
     display: block;
 }
 
-/* ==========================================================================
-   Responsive Viewport Breakdown Configurations
-   ========================================================================== */
 
-/* Tablets viewports layout (Switches into a 2x4 Grid Pattern) */
+
 @media screen and (max-width: 992px) {
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -254,7 +246,6 @@ body {
     }
 }
 
-/* Smartphones viewports layout (Flattens block layout cleanly to avoid distortion) */
 @media screen and (max-width: 576px) {
     .categories-grid {
         grid-template-columns: 1fr; /* 1 Column full view stack */
@@ -269,16 +260,10 @@ body {
 
 
 
-
-
-
-
-
-
 /*  */
-/* Section Background Wrapper Setup */
+/* Section Background Wrapper */
 .why-choose-us {
-    background-color: #e460be; /* The solid magenta pink background from your picture */
+    background-color: #e460be; 
     width: 100%;
     display: flex;
     justify-content:space-between;
@@ -324,7 +309,6 @@ body {
     border:2px solid peru;
 }
 
-/* Section Main Heading Block */
 .wcu-heading {
     color: #000000;
     font-size: 32px;
@@ -334,13 +318,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Bullet Points Lists Customizations */
 .wcu-points-list {
     list-style-type: disc;
     /* padding-left: 20px; */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between bullet items */
+    gap: 20px; 
 }
 
 .wcu-points-list li {
@@ -350,9 +333,7 @@ body {
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   Responsive Breakpoint Architecture Handling All Screen Widths
-   ========================================================================== */
+
 
 /* Tablet Viewports Adjustment */
 @media screen and (max-width: 992px) {
@@ -367,20 +348,19 @@ body {
     }
 }
 
-/* Mobile Devices Stacking Viewports Breakpoint */
 @media screen and (max-width: 768px) {
     .why-choose-us {
         padding: 45px 20px;
     }
     
     .wcu-container {
-        flex-direction: column; /* Stacks the columns vertically on phones */
+        flex-direction: column; 
         gap: 40px;
     }
 
     .wcu-image-wrapper {
         width: 100%;
-        max-width: 320px; /* Limits the model profile scaling limits on smaller viewports */
+        max-width: 320px; 
     }
 
     .wcu-content-wrapper {
@@ -395,12 +375,9 @@ body {
 /*  */
 
 
-
-
-
 /* Core Flex Container Workspace Setup */
 .featured-packages-section {
-    background-color: #dfd5dd; /* Soft lavender-grey tint background from picture */
+    background-color: #dfd5dd; 
     width: 100%;
     padding: 60px 20px;
     display: flex;
@@ -440,8 +417,8 @@ body {
 
 /* Light Blue Dynamic Interactive Item Card */
 .home-package-card {
-    background-color: #72cee7; /* Light sky blue background color matching image */
-    border: 8px solid #ffffff; /* Thick crisp white card borders */
+    background-color: #72cee7; 
+    border: 8px solid #ffffff; 
     padding: 30px 40px;
     text-align: left;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -485,7 +462,7 @@ body {
 
 /* Request action navigation trigger elements */
 .h-request-btn {
-    background-color: #e3deda; /* Neutral grey button styling matches image */
+    background-color: #e3deda; 
     color: #000000;
     border: none;
     border-radius: 2px;
@@ -500,9 +477,7 @@ body {
     background-color: #d1cbc6;
 }
 
-/* ==========================================================================
-   Responsive Adaptation Breakdown
-   ========================================================================== */
+
 @media screen and (max-width: 900px) {
     .h-pkg-title {
         font-size: 22px;
@@ -513,9 +488,7 @@ body {
     }
 }
 
-/* Mobile Layout Viewport Optimizations */
 @media screen and (max-width: 768px) {
-    /* Hide decorative cosmetics elements to maximize space on tiny screens */
     .decor-side {
         display: none;
     }
@@ -536,9 +509,7 @@ body {
 <body>
 
     <header class="navbar">
-        <!-- Logo Section -->
 <div class="logo-container">
-    <!-- Replace "logo.png" with the path to your actual image file -->
     <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
 </div>
 

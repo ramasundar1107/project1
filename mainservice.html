@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="mainservice.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
     background-color: #ffffff;
 }
 
-/* Services Showcase Section Styles */
 .services-showcase-section {
-    background-color: #ebddeb; /* படத்தில் உள்ளவாறு வெளிர் ஊதா பின்னணி நிறம் */
+    background-color: #ebddeb; 
     width: 100%;
     padding: 60px 30px;
     text-align: center;
@@ -39,7 +37,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* 3 கார்டுகளையும் நேராக வரிசைப்படுத்தும் கிரிட் லேஅவுட் */
 .services-cards-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -48,7 +45,6 @@ body {
     gap: 30px;
 }
 
-/* கார்டுகளின் பொதுவான கட்டமைப்பு */
 .service-display-card {
     background-color: #ffffff;
     border-radius: 12px;
@@ -60,10 +56,9 @@ body {
 }
 
 .service-display-card:hover {
-    transform: translateY(-5px); /* மவுஸ் வைக்கும்போது கார்டு சற்று மேலே எழும்பும் */
+    transform: translateY(-5px); 
 }
 
-/* கார்டு இமேஜ் பாக்ஸ் */
 .service-card-img {
     width: 100%;
     height: 240px;
@@ -76,7 +71,6 @@ body {
     object-fit: cover;
 }
 
-/* கார்டு டெக்ஸ்ட் பகுதிகள் */
 .service-card-body {
     padding: 25px 20px;
     display: flex;
@@ -97,12 +91,11 @@ body {
     color: #333333;
     line-height: 1.5;
     margin-bottom: 25px;
-    flex-grow: 1; /* டெக்ஸ்ட் சிறியதாக இருந்தாலும் பட்டன்கள் நேராக இருக்கும் */
+    flex-grow: 1; 
 }
 
-/* அடர் ஊதா நிற புக் நவ் பட்டன் */
 .service-action-btn {
-    background-color: #7b1fa2; /* படத்தில் உள்ளவாறு அடர் ஊதா/பரிடில் நிறம் */
+    background-color: #7b1fa2; 
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -119,11 +112,7 @@ body {
     background-color: #5c147a;
 }
 
-/* ==========================================================================
-   Responsive Architecture for Tablets and Phones
-   ========================================================================== */
 
-/* டேப்லெட் திரைகளுக்கு (2 கார்டுகளாக மாறும்) */
 @media screen and (max-width: 992px) {
     .services-cards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -131,7 +120,6 @@ body {
     }
 }
 
-/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் வரிசையாக மாறும்) */
 @media screen and (max-width: 650px) {
     .services-cards-grid {
         grid-template-columns: 1fr;
@@ -145,9 +133,7 @@ body {
 </head>
 <body>
     <header class="navbar">
-        <!-- Logo Section -->
 <div class="logo-container">
-    <!-- Replace "logo.png" with the path to your actual image file -->
     <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
 </div>
 
@@ -161,7 +147,6 @@ body {
             <a href="contact.html" class="nav-item">Contact</a>
         </nav>
 
-        <!-- Right Side Controls (Search & Profile) -->
        <div class="nav-controls">
     <div class="search-bar">
         <input type="text" placeholder="Search">
@@ -178,9 +163,7 @@ body {
 
     </header>
 
-    <!-- மெயின் சர்வீஸ் செக்ஷன் -->
     <section class="services-showcase-section">
-        <!-- மெயின் செக்ஷன் தலைப்பு -->
         <h1 class="section-main-title">SERVICES</h1>
 
         <div class="services-cards-grid">
@@ -231,7 +214,6 @@ body {
 
         <div class="services-cards-grid">
             
-            <!-- கார்டு 1: Bridal Makeup -->
             <article class="service-display-card">
                 <div class="service-card-img">
                     <img src="project img/hair brid.jpg" alt="Bridal Makeup Showcase">
@@ -245,7 +227,6 @@ body {
                 </div>
             </article>
 
-            <!-- கார்டு 2: Party Makeup -->
             <article class="service-display-card">
                 <div class="service-card-img">
                     <img src="project img/bridel2.jpeg" alt="Party Makeup Showcase">
@@ -259,7 +240,6 @@ body {
                 </div>
             </article>
 
-            <!-- கார்டு 3: Saree Draping -->
             <article class="service-display-card">
                 <div class="service-card-img">
                     <img src="project img/party n2.jpg" alt="Saree Draping Showcase">
@@ -331,7 +311,6 @@ body {
         </div>
     </footer>
 
-    <!-- இன்லைன் ஜாவாஸ்கிரிப்ட் - புக்கிங் பக்கத்திற்கு விபரங்களை அனுப்பும் கோடு -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const serviceActionBtns = document.querySelectorAll(".service-action-btn");
@@ -344,7 +323,6 @@ body {
                     const urlSafePackage = encodeURIComponent(selectedPackage);
                     const urlSafePrice = encodeURIComponent(structuralPrice);
 
-                    // நேராக உங்கள் புக்கிங் பக்கத்திற்கு (booking.html) விபரங்களை எடுத்துச் செல்கிறது
                     window.location.href = `booking.html?package=${urlSafePackage}&price=${urlSafePrice}`;
                 });
             });

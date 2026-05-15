@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule Your Service</title>
+    <title>Schedule Your Service</title>   
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="booking.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* அடிப்படை அமைப்புகள் */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     margin: 0 auto;
 }
 
-/* Back பட்டன் ஸ்டைல் */
 .top-nav-bar {
     margin-bottom: 20px;
 }
@@ -43,7 +42,6 @@ body {
     gap: 8px;
 }
 
-/* தலைப்புகள் */
 .booking-header {
     text-align: center;
     margin-bottom: 40px;
@@ -60,7 +58,6 @@ body {
     color: #555555;
 }
 
-/* மெயின் கிரிட் சிஸ்டம் */
 .booking-grid {
     display: flex;
     justify-content: space-between;
@@ -71,7 +68,6 @@ body {
     flex: 1;
 }
 
-/* பேனல் ஹெடர்கள் */
 .panel-header {
     display: flex;
     justify-content: space-between;
@@ -91,14 +87,12 @@ body {
     color: #444444;
 }
 
-/* லேஅவுட் வொர்க்ஸ்பேஸ் */
 .scheduler-workspace {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* தேதி இன்புட் கட்டம் */
 .date-picker-box {
     display: flex;
     flex-direction: column;
@@ -115,12 +109,11 @@ body {
 .date-picker-box input[type="date"] {
     padding: 10px;
     font-size: 15px;
-    border: 2px solid #7c4dff; /* ஊதா நிற பார்டர் */
+    border: 2px solid #7c4dff; 
     border-radius: 4px;
     outline: none;
 }
 
-/* நேர ஸ்லாட்டுகள் கட்டம் */
 .time-slots-container {
     flex: 1;
 }
@@ -132,7 +125,6 @@ body {
     color: #111111;
 }
 
-/* நேர பட்டன்கள் கிரிட் (2 வரிசைகளாக பிரிக்கப்பட்டுள்ளது) */
 .slots-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -157,14 +149,12 @@ body {
     color: #7c4dff;
 }
 
-/* கிளிக் செய்யும்போது மாறும் ஆக்டிவ் ஸ்டைல் */
 .time-slot-btn.selected {
     background-color: #7c4dff;
     color: #ffffff;
     border-color: #7c4dff;
 }
 
-/* வலது பக்க விவரங்கள் கார்டு */
 .right-panel .summary-card {
     display: flex;
     flex-direction: column;
@@ -183,7 +173,6 @@ body {
     margin-bottom: 12px;
 }
 
-/* லைவ் அப்டேட் ஆகும் தேதி மற்றும் நேர டெக்ஸ்ட் */
 .live-datetime-indicator {
     font-size: 15px;
     font-weight: 700;
@@ -191,19 +180,16 @@ body {
     margin-bottom: 15px;
 }
 
-/* இதர ஸ்டேடிக் தகவல்கள் */
 .static-meta-details p {
     font-size: 14.5px;
     color: #555555;
     margin-bottom: 6px;
 }
 
-/* Request To Book பட்டன் வடிவமைப்பு */
 .request-book-btn {
     width: 100%;
     max-width: 280px;
-    background-color: #7c86f9; /* படத்தில் உள்ளவாறு வெளிர் நீல-ஊதா நிறம் */
-    color: #ffffff;
+    background-color: #7c86f9; 
     border: none;
     padding: 14px;
     font-size: 15px;
@@ -218,7 +204,6 @@ body {
     background-color: #5d68e2;
 }
 
-/* ரெஸ்பான்சிவ் மொபைல் லேஅவுட் */
 @media screen and (max-width: 900px) {
     .booking-grid {
         flex-direction: column;
@@ -271,23 +256,19 @@ body {
     </header>
 
     <main class="booking-container">
-        <!-- Back பட்டன் -->
         <div class="top-nav-bar">
             <a href="services.html" class="back-link">
                 <i class="fa-solid fa-chevron-left"></i> Back
             </a>
         </div>
 
-        <!-- தலைப்பு பகுதிகள் -->
         <header class="booking-header">
             <h1>Schedule Your Service</h1>
             <p class="subtitle">Check Out Our Availability And Book The Date And Time That Works For You</p>
         </header>
 
-        <!-- மெயின் கிரிட் லேஅவுட் -->
         <section class="booking-grid">
             
-            <!-- இடது பக்கம்: கேலண்டர் மற்றும் நேர ஸ்லாட்டுகள் -->
             <div class="grid-column left-panel">
                 <div class="panel-header">
                     <h2>Select A Date And Time</h2>
@@ -295,13 +276,11 @@ body {
                 </div>
                 
                 <div class="scheduler-workspace">
-                    <!-- தேதி தேர்வு செய்யும் இன்புட் (HTML Native Datepicker) -->
                     <div class="date-picker-box">
                         <label for="booking-date">Date</label>
                         <input type="date" id="booking-date" value="2026-05-12">
                     </div>
 
-                    <!-- நேர ஸ்லாட்டுகள் (Time Slots Grid) -->
                     <div class="time-slots-container">
                         <p class="availability-title" id="slot-day-heading">Availability For Monday 12 May</p>
                         
@@ -321,7 +300,6 @@ body {
                 </div>
             </div>
 
-            <!-- வலது பக்கம்: சர்வீஸ் விவரங்கள் கார்டு -->
             <div class="grid-column right-panel">
                 <div class="panel-header">
                     <h2>Service Details</h2>
@@ -331,7 +309,6 @@ body {
                     <h3 id="selected-package-name">Bridal Makeup Luxury Package</h3>
                     <p class="pkg-price-text" id="selected-package-price">Rs 25000 Negotiable</p>
                     
-                    <!-- புதுப்பிக்கும் தேதி மற்றும் நேரக் காட்டி (Dynamic Text) -->
                     <p class="live-datetime-indicator" id="live-datetime-text">12 May 2026 At 2:30 Am</p>
                     
                     <div class="static-meta-details">
@@ -340,7 +317,6 @@ body {
                         <p>8 Hr</p>
                     </div>
                     
-                    <!-- Request To Book பட்டன் -->
                     <button type="button" class="action-btn request-book-btn" id="submit-booking-btn">Request To Book</button>
                 </div>
             </div>
@@ -405,35 +381,28 @@ body {
 
     <script src="calendar.js"></script>
     <script>
-        // ==========================================================================
-// Request To Book கிளிக் செய்யும்போது விவரங்களுடன் client-details.html-க்கு செல்லும் கோடு
-// ==========================================================================
+      
 const submitBookingBtn = document.getElementById("submit-booking-btn");
 
 if (submitBookingBtn) {
     submitBookingBtn.addEventListener("click", () => {
-        // 1. தற்போதைய பக்கத்தில் இருக்கும் பேக்கேஜ் பெயர் மற்றும் விலையை எடுக்கிறது
         const windowUrlParameters = new URLSearchParams(window.location.search);
         const currentPackage = windowUrlParameters.get('package') || "Luxury Package";
         const currentPrice = windowUrlParameters.get('price') || "25000";
 
-        // 2. பயனர் தேர்ந்தெடுத்த லைவ் தேதி மற்றும் நேரத்தை எடுக்கிறது
         const dateInput = document.getElementById("booking-date");
         let selectedTimeSlotElement = document.querySelector(".time-slot-btn.selected");
         let currentSelectedTime = selectedTimeSlotElement ? selectedTimeSlotElement.getAttribute("data-time") : "2:30 Am";
 
-        // 3. தேதியை அழகிய வடிவிற்கு மாற்றுகிறது (எ.கா: 12 May 2026)
         const dateValue = new Date(dateInput.value);
         const monthsArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         const formattedDate = `${dateValue.getDate()} ${monthsArray[dateValue.getMonth()]} ${dateValue.getFullYear()}`;
 
-        // 4. URL முகவரியில் பாதுகாப்பாக அனுப்ப தரவுகளை மாற்றி அமைக்கிறது
         const encodedPackage = encodeURIComponent(currentPackage);
         const encodedPrice = encodeURIComponent(currentPrice);
         const encodedDate = encodeURIComponent(formattedDate);
         const encodedTime = encodeURIComponent(currentSelectedTime);
 
-        // 5. நேராக வாடிக்கையாளர் விவரங்கள் பக்கத்திற்கு (client-details.html) அனைத்து விபரங்களுடன் கூட்டிச் செல்கிறது!
         window.location.href = `client-details.html?package=${encodedPackage}&price=${encodedPrice}&date=${encodedDate}&time=${encodedTime}`;
     });
 }

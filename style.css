@@ -3,16 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
     background-color: #f5f5f5;
 }
 
-/* Navbar Base Styles (Desktop Layout) */
 .navbar {
-    background-color: #583150; /* Dark plum background from the image */
+    background-color: #583150;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,7 +20,6 @@ body {
     width: 100%;
 }
 
-/* Logo Container Layout */
 .logo-container {
     display: flex;
     align-items: center;
@@ -31,26 +29,24 @@ body {
 
 /* Logo Image Rules */
 .navbar-logo {
-    height: 100px;          /* Restricts height to fit cleanly inside the bar */
-    width: auto;           /* Maintains original aspect ratio without distortion */
-    object-fit: contain;   /* Ensures image stays sharp inside bounding limits */
+    height: 100px;          
+    width: auto;           
+    object-fit: contain;   
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
 
 .navbar-logo:hover {
-    opacity: 0.85;         /* Subtle feedback animation on hover */
+    opacity: 0.85;         
 }
 
-/* Small Screen Mobile Adjustment */
 @media screen and (max-width: 900px) {
     .navbar-logo {
-        height: 48px;      /* Slightly scales down the logo on smaller viewports */
+        height: 48px;      
     }
 }
 
 
-/* Navigation Links Layout */
 .nav-menu {
     display: flex;
     gap: 30px;
@@ -68,7 +64,6 @@ body {
     color: #cca43b;
 }
 
-/* Right Controls & Search Input */
 .nav-controls {
     display: flex;
     align-items: center;
@@ -82,7 +77,7 @@ body {
 }
 
 .search-bar input {
-    background-color: #d1cbc4; /* Soft grey background */
+    background-color: #d1cbc4; 
     border: none;
     border-radius: 20px;
     padding: 8px 40px 8px 15px;
@@ -117,9 +112,7 @@ body {
     color: #cca43b;
 }
 
-/* ==========================================================================
-   Responsive Design Breakpoint (Tablets and Mobile Screens)
-   ========================================================================== */
+
 @media screen and (max-width: 900px) {
     .navbar {
         flex-direction: column;
@@ -130,7 +123,7 @@ body {
     .nav-menu {
         width: 100%;
         justify-content: center;
-        flex-wrap: wrap; /* Wraps items cleanly on small viewports */
+        flex-wrap: wrap; 
         gap: 15px 25px;
     }
 
@@ -141,16 +134,12 @@ body {
 
     .search-bar input {
         width: 100%;
-        max-width: 350px; /* Expands to fill natural mobile width */
+        max-width: 350px; 
     }
 }
 
-
-
-/* Section modules */
-/* Hero Banner Container Base */
 .hero-banner {
-    background-color: #e460be; /* Bright pink background from the image */
+    background-color: #e460be; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -186,9 +175,8 @@ body {
     max-width: 600px;
 }
 
-/* Call To Action Button styling */
 .hero-btn {
-    background-color: #6d1b53; /* Deep plum button color */
+    background-color: #6d1b53; 
     color: #ffffff;
     text-decoration: none;
     font-size: 16px;
@@ -227,11 +215,7 @@ body {
     object-position: center;
 }
 
-/* ==========================================================================
-   Responsive Breakpoints for Tablets and Smartphones
-   ========================================================================== */
 
-/* Tablet Viewports */
 @media screen and (max-width: 992px) {
     .hero-title {
         font-size: 32px;
@@ -278,7 +262,7 @@ body {
 /*  */
 
 .main-footer {
-    background-color: #55324c; /* Deep plum color matching the reference image exactly */
+    background-color: #55324c; 
     color: #ffffff;
     padding: 50px 40px 20px 40px;
     margin-top: 40px;
@@ -292,7 +276,7 @@ body {
     justify-content: space-between;
     gap: 40px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #704b66; /* Subtle bright separator row line */
+    border-bottom: 1px solid #704b66;
 }
 
 .footer-col {
@@ -371,14 +355,11 @@ body {
     transform: scale(1.15);
 }
 
-/* ==========================================================================
-   Footer Responsive Breakpoints
-   ========================================================================== */
+
 @media screen and (max-width: 850px) {
     .footer-links-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2x2 layout system configuration */
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
@@ -388,7 +369,7 @@ body {
     }
 
     .footer-links-grid {
-        grid-template-columns: 1fr; /* Full single vertical strip layout stacking rows on devices */
+        grid-template-columns: 1fr; 
         gap: 25px;
     }
 

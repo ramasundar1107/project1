@@ -41,23 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
 </div>
 
-//// ==========================================================================
-// Check Next Availability கிளிக் செய்தால் calendar.html பக்கத்திற்கு செல்லும் கோடு
-// ==========================================================================
+
 const checkNextBtn = document.getElementById("check-next-avail-btn");
 
 if (checkNextBtn) {
     checkNextBtn.addEventListener("click", () => {
-        // தற்போதைய பக்கத்தில் இருக்கும் பேக்கேஜ் மற்றும் விலை விவரங்களை எடுக்கிறது
         const windowUrlParameters = new URLSearchParams(window.location.search);
         const currentPackage = windowUrlParameters.get('package') || "Luxury Package";
         const currentPrice = windowUrlParameters.get('price') || "25000";
 
-        // URL முகவரிக்கு ஏற்றவாறு மாற்றுகிறது
         const encodedPackage = encodeURIComponent(currentPackage);
         const encodedPrice = encodeURIComponent(currentPrice);
 
-        // நேராக உங்கள் புதிய இன்டராக்டிவ் கேலண்டர் பக்கத்திற்கு (calendar.html) கூட்டிச் செல்கிறது
         window.location.href = `calendar.html?package=${encodedPackage}&price=${encodedPrice}`;
     });
 }

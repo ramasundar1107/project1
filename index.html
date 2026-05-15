@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <style>
-        /* Container Wrapper Layout */
 .categories-section {
     width: 100%;
     padding: 0;
     background-color: #ffffff;
 }
 
-/* 4x2 Grid Setup for Desktop Monitors */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: #f7a5d9; /* The pink thin border line color from the picture */
-    gap: 2px; /* Emulates pixel perfect grid separating borders */
+    background-color: #f7a5d9; 
+    gap: 2px; 
     width: 100%;
 }
 
-/* Base Card Attributes */
 .category-card {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Forces perfectly square responsive blocks */
+    aspect-ratio: 1 / 1; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -35,9 +33,8 @@
     align-items: center;
 }
 
-/* Light Teal Text Container Blocks Styling */
 .teal-bg {
-    background-color: #76cee6; /* The light blue/teal color from the photo */
+    background-color: #76cee6; 
     padding: 20px;
     text-align: center;
 }
@@ -60,9 +57,8 @@
     margin-bottom: 30px;
 }
 
-/* Light Grey Pill Actions Buttons */
 .category-book-btn {
-    background-color: #e3deda; /* Cream-grey tone matches image */
+    background-color: #e3deda; 
     color: #000000;
     border: none;
     font-size: 14px;
@@ -78,7 +74,6 @@
     transform: scale(1.02);
 }
 
-/* Responsive Image Block Adjustments */
 .image-card img {
     width: 100%;
     height: 100%;
@@ -87,11 +82,7 @@
     display: block;
 }
 
-/* ==========================================================================
-   Responsive Viewport Breakdown Configurations
-   ========================================================================== */
 
-/* Tablets viewports layout (Switches into a 2x4 Grid Pattern) */
 @media screen and (max-width: 992px) {
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -102,16 +93,15 @@
     }
 }
 
-/* Smartphones viewports layout (Flattens block layout cleanly to avoid distortion) */
 @media screen and (max-width: 576px) {
     .categories-grid {
-        grid-template-columns: 1fr; /* 1 Column full view stack */
+        grid-template-columns: 1fr; 
         gap: 4px;
     }
     
     .category-card {
         aspect-ratio: auto;
-        min-height: 260px; /* Safe standard height limits on mobile viewports */
+        min-height: 260px; 
     }
 }
 
@@ -122,7 +112,7 @@
 /*  */
 /* Section Background Wrapper Setup */
 .why-choose-us {
-    background-color: #e460be; /* The solid magenta pink background from your picture */
+    background-color: #e460be;
     width: 100%;
     display: flex;
     justify-content:space-between;
@@ -140,7 +130,6 @@
     gap: 50px;
 }
 
-/* Left Image Column Dimensions */
 .wcu-image-wrapper {
     flex: 1;
     display: flex;
@@ -155,7 +144,6 @@
     
 }
 
-/* Right Content Column Layout */
 .wcu-content-wrapper {
     flex: 1.2;
     display: flex;
@@ -163,7 +151,6 @@
     justify-content: center;
 }
 
-/* Section Main Heading Block */
 .wcu-heading {
     color: #000000;
     font-size: 32px;
@@ -173,13 +160,12 @@
     letter-spacing: 0.5px;
 }
 
-/* Bullet Points Lists Customizations */
 .wcu-points-list {
     list-style-type: disc;
     /* padding-left: 20px; */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between bullet items */
+    gap: 20px; 
 }
 
 .wcu-points-list li {
@@ -189,11 +175,7 @@
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   Responsive Breakpoint Architecture Handling All Screen Widths
-   ========================================================================== */
 
-/* Tablet Viewports Adjustment */
 @media screen and (max-width: 992px) {
     .wcu-heading {
         font-size: 28px;
@@ -206,20 +188,19 @@
     }
 }
 
-/* Mobile Devices Stacking Viewports Breakpoint */
 @media screen and (max-width: 768px) {
     .why-choose-us {
         padding: 45px 20px;
     }
     
     .wcu-container {
-        flex-direction: column; /* Stacks the columns vertically on phones */
+        flex-direction: column; 
         gap: 40px;
     }
 
     .wcu-image-wrapper {
         width: 100%;
-        max-width: 320px; /* Limits the model profile scaling limits on smaller viewports */
+        max-width: 320px;
     }
 
     .wcu-content-wrapper {
@@ -236,7 +217,7 @@
 
 
 .featured-packages-section {
-    background-color: #dfd5dd; /* Soft lavender-grey tint background from picture */
+    background-color: #dfd5dd; 
     width: 100%;
     padding: 60px 20px;
     display: flex;
@@ -268,13 +249,12 @@
     max-width: 650px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Separator gap between stacked cards */
+    gap: 30px; 
 }
 
-/* Light Blue Dynamic Interactive Item Card */
 .home-package-card {
-    background-color: #72cee7; /* Light sky blue background color matching image */
-    border: 8px solid #ffffff; /* Thick crisp white card borders */
+    background-color: #72cee7; 
+    border: 8px solid #ffffff; 
     padding: 30px 40px;
     text-align: left;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -296,7 +276,6 @@
     margin-bottom: 20px;
 }
 
-/* Thin horizontal line matching reference card layout styling */
 .h-pkg-divider {
     border: none;
     border-top: 1px solid #ffffff;
@@ -316,9 +295,8 @@
     font-weight: 600;
 }
 
-/* Request action navigation trigger elements */
 .h-request-btn {
-    background-color: #e3deda; /* Neutral grey button styling matches image */
+    background-color: #e3deda; 
     color: #000000;
     border: none;
     border-radius: 2px;
@@ -333,9 +311,7 @@
     background-color: #d1cbc6;
 }
 
-/* ==========================================================================
-   Responsive Adaptation Breakdown
-   ========================================================================== */
+
 @media screen and (max-width: 900px) {
     .h-pkg-title {
         font-size: 22px;
@@ -348,7 +324,6 @@
 
 /* Mobile Layout Viewport Optimizations */
 @media screen and (max-width: 768px) {
-    /* Hide decorative cosmetics elements to maximize space on tiny screens */
     .decor-side {
         display: none;
     }
@@ -366,11 +341,9 @@
 
 /*  */
 
-/* ==========================================================================
-   Google Reviews Section Styles
-   ========================================================================== */
+
 .reviews-section {
-    background-color: #ebddeb; /* படத்தில் உள்ளவாறு வெளிர் ஊதா பின்னணி நிறம் */
+    background-color: #ebddeb; 
     width: 100%;
     padding: 60px 40px;
     display: flex;
@@ -378,16 +351,14 @@
     align-items: center;
 }
 
-/* 3 கார்டுகளையும் நேராக வரிசைப்படுத்தும் கிரிட் லேஅவுட் */
 .reviews-grid {
     max-width: 1200px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* கார்டுகளுக்கு இடைப்பட்ட கேப் */
+    gap: 30px; 
 }
 
-/* பொதுவான கார்டு வடிவமைப்பு */
 .review-card {
     background-color: #ffffff;
     border-radius: 8px;
@@ -398,7 +369,6 @@
     min-height: 250px;
 }
 
-/* முதலாவது கார்டுக்கான பிரத்யேக சென்டர் அலைன்மென்ட் */
 .rating-summary-card {
     align-items: center;
     text-align: center;
@@ -427,7 +397,6 @@
     color: #000000;
 }
 
-/* பயனர் ரிவியூ கார்டு வடிவமைப்பு */
 .user-review-card {
     align-items: flex-start;
     text-align: left;
@@ -440,7 +409,6 @@
     margin-bottom: 15px;
 }
 
-/* வட்ட வடிவ அவதார் லோகோக்கள் */
 .user-avatar {
     width: 36px;
     height: 36px;
@@ -453,8 +421,8 @@
     font-size: 15px;
 }
 
-.purple-bg { background-color: #6366f1; } /* மனோஜ் - ஊதா நிறம் */
-.blue-bg { background-color: #3b82f6; }   /* ஷான்வி - நீல நிறம் */
+.purple-bg { background-color: #6366f1; } 
+.blue-bg { background-color: #3b82f6; }   
 
 .user-name {
     font-size: 30px;
@@ -462,11 +430,10 @@
     color: #000000;
 }
 
-/* நட்சத்திரங்களின் (Stars) ஸ்டைல் மற்றும் ஆரஞ்சு நிறம் */
 .stars-row {
     display: flex;
     gap: 4px;
-    color: #f97316; /* ஆரஞ்சு/அடர் மஞ்சள் நட்சத்திரங்கள் */
+    color: #f97316; 
     font-size: 16px;
 }
 
@@ -481,11 +448,7 @@
     line-height: 1.4;
 }
 
-/* ==========================================================================
-   Responsive Handling for Mobile Displays
-   ========================================================================== */
 
-/* டேப்லெட் திரைகளுக்கு (2 கார்டுகளாக மாறும்) */
 @media screen and (max-width: 992px) {
     .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -496,7 +459,6 @@
     }
 }
 
-/* மொபைல் போன் திரைகளுக்கு (ஒரே நேர் வரிசையாக மாறும்) */
 @media screen and (max-width: 650px) {
     .reviews-grid {
         grid-template-columns: 1fr;
@@ -527,17 +489,14 @@
             <a href="contact.html" class="nav-item">Contact</a>
         </nav>
 
-        <!-- Right Side Controls (Search & Profile) -->
        <div class="nav-controls">
     <div class="search-bar">
         <input type="text" placeholder="Search">
         <button type="submit" class="search-btn">
-            <!-- Inline SVG Search Glass -->
             <svg xmlns="w3.org" viewBox="0 0 512 512" width="16" height="16" fill="#555"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
         </button>
     </div>
     <a href="login.html" class="profile-icon">
-        <!-- Inline SVG User Profile -->
         <svg xmlns="w3.org" viewBox="0 0 448 512" width="20" height="20" fill="#ffffff"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
     </a>
 </div>
@@ -545,7 +504,6 @@
     </header>
 
      <section class="hero-banner">
-    <!-- Left Column: Content Text and CTA Button -->
     <div class="hero-content">
         <h1 class="hero-title">Quality Bridal Makeup &<br>Hair Styling Services</h1>
         <p class="hero-subtitle">Certified Professionals To Cater Your Bridal Makeup & Hairstyling Needs</p>
@@ -555,9 +513,7 @@
         </a>
     </div>
 
-    <!-- Right Column: Image Presentation -->
     <div class="hero-image-container">
-        <!-- Replace "bridal-image.jpg" with your actual image path -->
         <img src="project img/face2-removebg-preview.png" alt="Bridal Makeup Profile" class="hero-img">
     </div>
 </section>
@@ -618,9 +574,7 @@
 <section class="why-choose-us">
     <div class="wcu-container">
         
-        <!-- Left Side: Makeup Model Image Display -->
         <div class="wcu-image-wrapper">
-            <!-- Replace "model-makeup.png" with your actual image path -->
             <img src="project img/makeover-removebg-preview.png" alt="Professional Makeup Application" class="wcu-img">
         </div>
 
@@ -688,7 +642,6 @@
 <section class="reviews-section">
     <div class="reviews-grid">
         
-        <!-- கார்டு 1: கூகுள் ஓவரால ரேட்டிங் கார்டு -->
         <article class="review-card rating-summary-card">
             <div class="rating-number">4.7</div>
             <div class="stars-row">
@@ -702,7 +655,6 @@
             <p class="brand-name">Booking Myna</p>
         </article>
 
-        <!-- கார்டு 2: மனோஜ் பொண்டா அவர்களின் விமர்சனம் -->
         <article class="review-card user-review-card">
             <div class="user-info-row">
                 <div class="user-avatar purple-bg">M</div>
@@ -718,7 +670,6 @@
             <p class="review-text">Very Quick Response With Good Artist</p>
         </article>
 
-        <!-- கார்டு 3: ஷான்வி ஷரவ் அவர்களின் விமர்சனம் -->
         <article class="review-card user-review-card">
             <div class="user-info-row">
                 <div class="user-avatar blue-bg">S</div>

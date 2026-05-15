@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="cloudflare.com">
     <link rel="stylesheet" href="login.css">
     <style>
@@ -13,18 +13,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
-/* முக்கிய மாற்றம்: body-ல் இருக்கும் Display Flex நீக்கப்பட்டுள்ளது */
 body {
-    background-color: #ebddeb; /* மென்மையான வெளிர் ஊதா பின்னணி */
+    background-color: #ebddeb; 
     width: 100%;
 }
 
-/* ==========================================================================
-   Header Navbar Styles (Top Block)
-   ========================================================================== */
+
 .navbar {
     background-color: #5c324e;
     display: flex;
@@ -83,17 +80,14 @@ body {
     cursor: pointer;
 }
 
-/* ==========================================================================
-   Main Content Area Workspace (Center Block)
-   ========================================================================== */
+
 .auth-main-workspace {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px; /* ஹெடருக்கும் ஃபூட்டருக்கும் நடுவே தாராள இடைவெளி தருகிறது */
-    min-height: calc(100vh - 70px - 300px); /* ஸ்கிரீனின் நடுப்பகுதியைத் தக்கவைக்கும் */
-}
+    padding: 60px 20px; 
+    min-height: calc(100vh - 70px - 300px); }
 
 .auth-container {
     width: 100%;
@@ -214,9 +208,6 @@ body {
 .google-icon { color: #4285f4; }
 .facebook-icon { color: #1877f2; }
 
-/* ==========================================================================
-   Footer Styles (Bottom Block)
-   ========================================================================== */
 .main-footer {
     background-color: #55324c;
     color: #ffffff;
@@ -281,16 +272,14 @@ body {
 
 @media screen and (max-width: 500px) {
     .footer-links-grid { grid-template-columns: 1fr; }
-    .nav-menu { display: none; } /* மொபைலில் மெனுவை மறைக்கும் */
+    .nav-menu { display: none; } 
 }
 
     </style>
 </head>
 <body>
 
-    <!-- ==========================================
-         1. HEADER SECTION (நேவிகேஷன் பார்)
-         ========================================== -->
+    
     <header class="navbar">
         <div class="logo-container">
             <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
@@ -315,9 +304,7 @@ body {
         </div>
     </header>
 
-    <!-- ==========================================
-         2. MAIN CONTENT SECTION (லாகின் & சைன்-அப்)
-         ========================================== -->
+    
     <main class="auth-main-workspace">
         <div class="auth-container">
             
@@ -385,9 +372,7 @@ body {
         </div>
     </main>
 
-    <!-- ==========================================
-         3. FOOTER SECTION (அடிப் பகுதி)
-         ========================================== -->
+    
     <footer class="main-footer">
         <div class="footer-links-grid">
             <div class="footer-col">
@@ -434,10 +419,8 @@ body {
 
     
 
-        <!-- இதைப் பக்கத்தின் கீழே </body> டேக்கிற்கு மேலே அப்படியே பேஸ்ட் செய்யவும் -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. ஃபார்ம் பாக்ஸ்களை மாற்றுவதற்கான கூறுகள் (Form Switcher Elements)
             const loginBox = document.getElementById("login-box");
             const signupBox = document.getElementById("signup-box");
             const goToSignupBtn = document.getElementById("go-to-signup");
@@ -453,37 +436,27 @@ body {
                 loginBox.classList.remove("hidden");
             });
 
-            // ==========================================================================
-            // 2. புதிய திருத்தம்: SUCCESS MESSAGE NOTIFICATION LOGIC
-            // ==========================================================================
             
-            // லாகின் ஃபார்ம் சமர்ப்பிக்கும் போது (On Login Submit)
             const loginForm = loginBox.querySelector(".minimalist-auth-form");
             loginForm.addEventListener("submit", (event) => {
-                event.preventDefault(); // பக்கம் ரீஃப்ரெஷ் (Refresh) ஆவதைத் தடுக்கிறது
+                event.preventDefault(); 
 
                 const emailInput = document.getElementById("login-email").value;
 
-                // திரையில் கன்பர்மேஷன் மெசேஜ் பாக்ஸ் காட்டும்
                 alert("You are successfully logged in!");
 
-                // லாகின் முடிந்ததும் பயனர் தானாகவே ஹோம் பேஜிற்கு (index.html) அழைத்துச் செல்லப்படுவார்
                 window.location.href = "index.html";
             });
 
-            // சைன்-அப் ஃபார்ம் சமர்ப்பிக்கும் போது (On Sign Up Submit)
             const signupForm = signupBox.querySelector(".minimalist-auth-form");
             signupForm.addEventListener("submit", (event) => {
-                event.preventDefault(); // பக்கம் ரீஃப்ரெஷ் ஆவதைத் தடுக்கிறது
+                event.preventDefault(); 
 
-                // திரையில் கன்பர்மேஷன் மெசேஜ் பாக்ஸ் காட்டும்
                 alert("You are successfully signed up!");
 
-                // சைன்-அப் முடிந்ததும் பயனர் உள்நுழைவதற்காக லாகின் ஃபார்ம் தானாகத் திறக்கும்
                 signupBox.classList.add("hidden");
                 loginBox.classList.remove("hidden");
                 
-                // உள்ளிட்ட பழைய விவரங்களை ஃபார்மில் இருந்து நீக்குகிறது (Reset fields)
                 signupForm.reset();
             });
         });

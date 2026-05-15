@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Your Service</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="booking.css">
     <link rel="stylesheet" href="style.css">
@@ -14,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
@@ -173,9 +174,7 @@ body {
     cursor: not-allowed;
 }
 
-/* ==========================================================================
-   Responsive Display Grid Conversions Handling Smartphones
-   ========================================================================== */
+
 @media screen and (max-width: 768px) {
     .booking-grid {
         flex-direction: column; /* Collapses side-by-side rows into clean vertical blocks */
@@ -211,14 +210,11 @@ body {
 <body>
 
     <header class="navbar">
-        <!-- Logo Section -->
 <div class="logo-container">
-    <!-- Replace "logo.png" with the path to your actual image file -->
     <img src="project img/bueaty_lg2-removebg-preview.png" alt="Beauty Logo" class="navbar-logo">
 </div>
 
 
-        <!-- Navigation Links -->
         <nav class="nav-menu">
             <a href="index.html" class="nav-item">Home</a>
             <a href="mainservice.html" class="nav-item">Services</a>
@@ -373,23 +369,16 @@ body {
       } else {
         displayPriceTextElement.textContent = "Rs 25000 Negotiable";
       }
-
-      // ==========================================================================
-      // 2. புதிய திருத்தம்: பட்டன் கிளிக் செய்யும்போது calendar.html பக்கத்தை திறக்கும் கோடு
-      // ==========================================================================
       const openCalendarBtn = document.getElementById("open-calendar-btn");
 
       if (openCalendarBtn) {
         openCalendarBtn.addEventListener("click", () => {
-          // தற்போதைய பக்கத்தில் இருக்கும் பேக்கேஜ் விவரங்களை சேகரிக்கிறது
           const currentPackage = requestedPackageName || "Luxury Package";
           const currentPrice = requestedPackagePrice || "25000";
 
-          // URL முகவரிக்கு ஏற்றவாறு மாற்றி அமைக்கிறது
           const encodedPackage = encodeURIComponent(currentPackage);
           const encodedPrice = encodeURIComponent(currentPrice);
 
-          // நேராக உங்கள் புதிய இன்டராக்டிவ் கேலண்டர் பக்கத்திற்கு (calendar.html) கூட்டிச் செல்கிறது
           window.location.href = `calendar.html?package=${encodedPackage}&price=${encodedPrice}`;
         });
       }

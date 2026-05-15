@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Details Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="client-details.css">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -14,7 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Roboto';
 }
 
 body {
@@ -229,9 +229,7 @@ body {
     background-color: #5d68e2;
 }
 
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
+
 @media screen and (max-width: 850px) {
     .details-grid {
         flex-direction: column;
@@ -285,7 +283,6 @@ body {
 
     </header>
     <main class="details-container">
-        <!-- Back பட்டன் -->
         <div class="top-nav-bar">
             <a href="calendar.html" id="back-to-calendar" class="back-link">
                 <i class="fa-solid fa-chevron-left"></i> Back
@@ -294,7 +291,6 @@ body {
 
         <section class="details-grid">
             
-            <!-- இடது பக்கம்: வாடிக்கையாளர் விவரங்கள் படிவம் (Form) -->
             <div class="grid-column left-panel">
                 <h1 class="main-title">Client Details</h1>
                 <hr class="section-divider">
@@ -366,7 +362,6 @@ body {
                 </form>
             </div>
 
-            <!-- வலது பக்கம்: புக்கிங் சம்மரி கார்டு -->
             <div class="grid-column right-panel">
                 <div class="summary-card">
                     <h2 class="summary-title">Booking Details</h2>
@@ -394,7 +389,6 @@ body {
 
                     <p class="sms-notice">By Completing Your Booking, You Agree To Receive Related SMS Notifications.</p>
                     
-                    <!-- மெயின் புக் நவ் பட்டன் (Form-ஐ சப்மிட் செய்யும்) -->
                     <button type="submit" form="client-info-form" class="action-btn book-now-btn">Book Now</button>
                 </div>
             </div>
