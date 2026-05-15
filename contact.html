@@ -292,7 +292,7 @@ body {
         
         <section class="reach-us-grid">
             <div class="grid-column form-panel">
-                <form id="contact-reach-form" class="minimalist-form" action="#" method="POST">
+                <form id="contact-reach-form" class="minimalist-form" action="#" method="POST" >
                     
                     <div class="form-row-double">
                         <div class="input-field-group">
@@ -382,6 +382,22 @@ body {
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactForm = document.getElementById("contact-reach-form");
+            if (contactForm) {
+                contactForm.addEventListener("submit", (event) => {
+                    event.preventDefault(); 
+                    const emailInput = document.getElementById("contact-email").value;
+                    alert("Your message has been sent successfully! Thank you for contacting us.");
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+
 
 </body>
 </html>
